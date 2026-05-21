@@ -173,99 +173,99 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| ACCS-01 | TBD | Pending |
-| ACCS-02 | TBD | Pending |
-| ACCS-03 | TBD | Pending |
-| ACCS-04 | TBD | Pending |
-| ACCS-05 | TBD | Pending |
-| ACCS-06 | TBD | Pending |
-| TASK-01 | TBD | Pending |
-| TASK-02 | TBD | Pending |
-| TASK-03 | TBD | Pending |
-| TASK-04 | TBD | Pending |
-| TASK-05 | TBD | Pending |
-| TASK-06 | TBD | Pending |
-| TASK-07 | TBD | Pending |
-| TASK-08 | TBD | Pending |
-| TASK-09 | TBD | Pending |
-| TASK-10 | TBD | Pending |
-| TASK-11 | TBD | Pending |
-| TASK-12 | TBD | Pending |
-| TASK-13 | TBD | Pending |
-| TASK-14 | TBD | Pending |
-| TASK-15 | TBD | Pending |
-| TASK-16 | TBD | Pending |
-| ORGN-01 | TBD | Pending |
-| ORGN-02 | TBD | Pending |
-| ORGN-03 | TBD | Pending |
-| ORGN-04 | TBD | Pending |
-| ORGN-05 | TBD | Pending |
-| ORGN-06 | TBD | Pending |
-| ORGN-07 | TBD | Pending |
-| CAPT-01 | TBD | Pending |
-| CAPT-02 | TBD | Pending |
-| CAPT-03 | TBD | Pending |
-| CAPT-04 | TBD | Pending |
-| CAPT-05 | TBD | Pending |
-| DASH-01 | TBD | Pending |
-| DASH-02 | TBD | Pending |
-| DASH-03 | TBD | Pending |
-| DASH-04 | TBD | Pending |
-| DASH-05 | TBD | Pending |
-| DASH-06 | TBD | Pending |
-| DASH-07 | TBD | Pending |
-| DASH-08 | TBD | Pending |
-| DASH-09 | TBD | Pending |
-| DASH-10 | TBD | Pending |
-| DASH-11 | TBD | Pending |
-| WAIT-01 | TBD | Pending |
-| WAIT-02 | TBD | Pending |
-| WAIT-03 | TBD | Pending |
-| WAIT-04 | TBD | Pending |
-| WAIT-05 | TBD | Pending |
-| REVW-01 | TBD | Pending |
-| REVW-02 | TBD | Pending |
-| REVW-03 | TBD | Pending |
-| REVW-04 | TBD | Pending |
-| REVW-05 | TBD | Pending |
-| REVW-06 | TBD | Pending |
-| REVW-07 | TBD | Pending |
-| REVW-08 | TBD | Pending |
-| REVW-09 | TBD | Pending |
-| HIST-01 | TBD | Pending |
-| HIST-02 | TBD | Pending |
-| HIST-03 | TBD | Pending |
-| HIST-04 | TBD | Pending |
-| HIST-05 | TBD | Pending |
-| INTG-01 | TBD | Pending |
-| INTG-02 | TBD | Pending |
-| INTG-03 | TBD | Pending |
-| INTG-04 | TBD | Pending |
-| INTG-05 | TBD | Pending |
-| INTG-06 | TBD | Pending |
-| INTG-07 | TBD | Pending |
-| INTG-08 | TBD | Pending |
-| INTG-09 | TBD | Pending |
-| INTG-10 | TBD | Pending |
-| INTG-11 | TBD | Pending |
-| CALN-01 | TBD | Pending |
-| CALN-02 | TBD | Pending |
-| CALN-03 | TBD | Pending |
-| CALN-04 | TBD | Pending |
-| CALN-05 | TBD | Pending |
-| NOTF-01 | TBD | Pending |
-| NOTF-02 | TBD | Pending |
-| NOTF-03 | TBD | Pending |
-| MOBL-01 | TBD | Pending |
-| MOBL-02 | TBD | Pending |
-| MOBL-03 | TBD | Pending |
-| MOBL-04 | TBD | Pending |
+| ACCS-01 | Phase 1 | Pending |
+| ACCS-02 | Phase 1 | Pending |
+| ACCS-03 | Phase 1 | Pending |
+| DASH-01 | Phase 1 | Pending |
+| MOBL-01 | Phase 1 | Pending |
+| MOBL-02 | Phase 1 | Pending |
+| MOBL-03 | Phase 1 | Pending |
+| MOBL-04 | Phase 1 | Pending |
+| TASK-01 | Phase 2 | Pending |
+| TASK-02 | Phase 2 | Pending |
+| TASK-03 | Phase 2 | Pending |
+| TASK-04 | Phase 2 | Pending |
+| TASK-05 | Phase 2 | Pending |
+| TASK-06 | Phase 2 | Pending |
+| TASK-07 | Phase 2 | Pending |
+| TASK-08 | Phase 2 | Pending |
+| TASK-09 | Phase 2 | Pending |
+| TASK-10 | Phase 2 | Pending |
+| TASK-11 | Phase 2 | Pending |
+| TASK-12 | Phase 2 | Pending |
+| TASK-13 | Phase 2 | Pending |
+| TASK-14 | Phase 2 | Pending |
+| TASK-15 | Phase 2 | Pending |
+| TASK-16 | Phase 2 | Pending |
+| ORGN-01 | Phase 2 | Pending |
+| ORGN-02 | Phase 2 | Pending |
+| ORGN-03 | Phase 2 | Pending |
+| ORGN-04 | Phase 2 | Pending |
+| ORGN-05 | Phase 2 | Pending |
+| ORGN-06 | Phase 2 | Pending |
+| ORGN-07 | Phase 2 | Pending |
+| CAPT-01 | Phase 3 | Pending |
+| CAPT-02 | Phase 3 | Pending |
+| CAPT-03 | Phase 3 | Pending |
+| CAPT-04 | Phase 3 | Pending |
+| CAPT-05 | Phase 3 | Pending |
+| DASH-02 | Phase 4 | Pending |
+| DASH-03 | Phase 4 | Pending |
+| DASH-04 | Phase 4 | Pending |
+| DASH-05 | Phase 4 | Pending |
+| DASH-06 | Phase 4 | Pending |
+| DASH-07 | Phase 4 | Pending |
+| DASH-08 | Phase 4 | Pending |
+| DASH-09 | Phase 4 | Pending |
+| DASH-10 | Phase 4 | Pending |
+| DASH-11 | Phase 4 | Pending |
+| WAIT-01 | Phase 5 | Pending |
+| WAIT-02 | Phase 5 | Pending |
+| WAIT-03 | Phase 5 | Pending |
+| WAIT-04 | Phase 5 | Pending |
+| WAIT-05 | Phase 5 | Pending |
+| REVW-01 | Phase 6 | Pending |
+| REVW-02 | Phase 6 | Pending |
+| REVW-03 | Phase 6 | Pending |
+| REVW-04 | Phase 6 | Pending |
+| REVW-05 | Phase 6 | Pending |
+| REVW-06 | Phase 6 | Pending |
+| REVW-07 | Phase 6 | Pending |
+| REVW-08 | Phase 6 | Pending |
+| REVW-09 | Phase 6 | Pending |
+| HIST-01 | Phase 7 | Pending |
+| HIST-02 | Phase 7 | Pending |
+| HIST-03 | Phase 7 | Pending |
+| HIST-04 | Phase 7 | Pending |
+| HIST-05 | Phase 7 | Pending |
+| INTG-01 | Phase 8 | Pending |
+| INTG-02 | Phase 8 | Pending |
+| INTG-03 | Phase 8 | Pending |
+| INTG-04 | Phase 8 | Pending |
+| INTG-05 | Phase 8 | Pending |
+| INTG-06 | Phase 8 | Pending |
+| INTG-07 | Phase 8 | Pending |
+| INTG-08 | Phase 8 | Pending |
+| INTG-09 | Phase 8 | Pending |
+| INTG-10 | Phase 8 | Pending |
+| INTG-11 | Phase 8 | Pending |
+| CALN-01 | Phase 9 | Pending |
+| CALN-02 | Phase 9 | Pending |
+| CALN-03 | Phase 9 | Pending |
+| CALN-04 | Phase 9 | Pending |
+| CALN-05 | Phase 9 | Pending |
+| NOTF-01 | Phase 9 | Pending |
+| NOTF-02 | Phase 9 | Pending |
+| NOTF-03 | Phase 9 | Pending |
+| ACCS-04 | Phase 10 | Pending |
+| ACCS-05 | Phase 10 | Pending |
+| ACCS-06 | Phase 10 | Pending |
 
 **Coverage:**
-- v1 requirements: 82 total
-- Mapped to phases: 0
-- Unmapped: 82
+- v1 requirements: 87 total
+- Mapped to phases: 87
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-05-22*
-*Last updated: 2026-05-22 after initial definition*
+*Last updated: 2026-05-22 after roadmap creation*
