@@ -48,8 +48,8 @@ Plans:
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
-- [ ] 01-02: Build private-link access and regeneration
-- [ ] 01-03: Build responsive app shell and bottom navigation
+- [x] 01-02: Build private-link access and regeneration
+- [x] 01-03: Build responsive app shell and bottom navigation
 
 **Wave 3** *(blocked on Wave 2 completion)*
 
@@ -263,7 +263,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Personal App Shell | 1/4 | In Progress|  |
+| 1. Personal App Shell | 3/4 | In Progress|  |
 | 2. Core Task System | 0/5 | Not started | - |
 | 3. Assistant Capture | 0/3 | Not started | - |
 | 4. Daily Focus Dashboard | 0/4 | Not started | - |
