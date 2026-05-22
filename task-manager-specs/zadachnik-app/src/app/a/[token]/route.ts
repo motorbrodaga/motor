@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { validateAccessToken } from "@/lib/access-tokens";
+import { getRequestUrl } from "@/lib/request-origin";
 import { createAccessSessionCookie, setAccessSessionCookie } from "@/lib/session";
 import { prisma } from "@/lib/db";
 
@@ -11,7 +12,7 @@ export async function GET(
   const accessToken = await validateAccessToken(token);
 
   if (!accessToken) {
-    return NextResponse.redirect(new URL("/?access=invalid", request.url));
+    return NextResponse.redirect(getRequestUrl(request, "/?access=invalid"));
   }
 
   await prisma.shellEvent.create({
@@ -21,7 +22,7 @@ export async function GET(
     }
   });
 
-  const dashboardUrl = new URL("/dashboard", request.url);
+  const dashboardUrl = getRequestUrl(request, "/dashboard");
   dashboardUrl.searchParams.set("sid", createAccessSessionCookie(accessToken.id));
   const response = NextResponse.redirect(dashboardUrl);
   setAccessSessionCookie(response, accessToken.id);

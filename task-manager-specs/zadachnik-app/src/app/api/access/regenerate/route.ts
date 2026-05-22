@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { regenerateAccessToken } from "@/lib/access-tokens";
+import { getRequestUrl } from "@/lib/request-origin";
 import {
   ACCESS_SESSION_COOKIE,
   getActiveSession,
@@ -18,7 +19,7 @@ export async function POST(request: NextRequest) {
   }
 
   const nextToken = await regenerateAccessToken(session.id);
-  const privateUrl = new URL(`/a/${nextToken.token}`, request.url).toString();
+  const privateUrl = getRequestUrl(request, `/a/${nextToken.token}`).toString();
   const response = NextResponse.json({ privateUrl });
   setAccessSessionCookie(response, nextToken.id);
   return response;
