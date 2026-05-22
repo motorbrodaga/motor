@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model AccessToken {
+  id        String    @id @default(cuid())
+  tokenHash String    @unique
+  label     String
+  active    Boolean   @default(true)
+  createdAt DateTime  @default(now())
+  rotatedAt DateTime?
+}
+
+model AppSetting {
+  key       String   @id
+  value     String
+  updatedAt DateTime @updatedAt
+}
+
+model ShellEvent {
+  id           String   @id @default(cuid())
+  kind         String
+  createdAt    DateTime @default(now())
+  metadataJson String?
+}
