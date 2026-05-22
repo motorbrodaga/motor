@@ -7,7 +7,7 @@
 
 ### Access
 
-- [ ] **ACCS-01**: User can open the app from phone and desktop against the same task database.
+- [x] **ACCS-01**: User can open the app from phone and desktop against the same task database.
 - [ ] **ACCS-02**: User can access the MVP through a private personal link.
 - [ ] **ACCS-03**: User can regenerate the private access link.
 - [ ] **ACCS-04**: User can keep working with tasks on the phone while offline.
@@ -123,7 +123,7 @@
 
 ### Mobile UI
 
-- [ ] **MOBL-01**: Phone UI feels app-like as far as the selected stack allows.
+- [x] **MOBL-01**: Phone UI feels app-like as far as the selected stack allows.
 - [ ] **MOBL-02**: Mobile bottom navigation includes Dashboard, Inbox, Waiting, Review, More.
 - [ ] **MOBL-03**: More section does not include separate "All tasks" and "Categories" items in the MVP.
 - [ ] **MOBL-04**: Quick task capture is available from the mobile experience.
@@ -173,11 +173,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| ACCS-01 | Phase 1 | Pending |
+| ACCS-01 | Phase 1 | Complete |
 | ACCS-02 | Phase 1 | Pending |
 | ACCS-03 | Phase 1 | Pending |
 | DASH-01 | Phase 1 | Pending |
-| MOBL-01 | Phase 1 | Pending |
+| MOBL-01 | Phase 1 | Complete |
 | MOBL-02 | Phase 1 | Pending |
 | MOBL-03 | Phase 1 | Pending |
 | MOBL-04 | Phase 1 | Pending |
