@@ -1,6 +1,15 @@
 import Link from "next/link";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
+import { ACCESS_SESSION_COOKIE } from "@/lib/session-cookie";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const cookieStore = await cookies();
+
+  if (cookieStore.get(ACCESS_SESSION_COOKIE)?.value) {
+    redirect("/dashboard");
+  }
+
   return (
     <main className="public-screen">
       <section className="public-panel">

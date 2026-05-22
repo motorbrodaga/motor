@@ -237,6 +237,126 @@ input {
   color: var(--danger);
 }
 
+.dashboard-home {
+  display: grid;
+  gap: 18px;
+}
+
+.dashboard-home__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.dashboard-home h2 {
+  margin: 0;
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.05;
+}
+
+.quick-capture-button {
+  display: inline-flex;
+  min-height: 44px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.dashboard-band,
+.dashboard-panel {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  padding: 20px;
+}
+
+.dashboard-band h3,
+.dashboard-panel h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.dashboard-band p,
+.dashboard-panel p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.capture-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  align-items: end;
+  background: rgb(23 33 31 / 28%);
+  padding: 16px;
+}
+
+.capture-panel {
+  width: min(100%, 560px);
+  margin: 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  padding: 18px;
+  box-shadow: 0 18px 70px rgb(23 33 31 / 18%);
+}
+
+.capture-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.capture-panel__header h3 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.capture-form {
+  display: grid;
+  gap: 12px;
+}
+
+.capture-form label {
+  display: grid;
+  gap: 6px;
+  font-weight: 700;
+}
+
+.capture-form input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  padding: 12px;
+}
+
+.capture-note {
+  margin: 14px 0 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
 @media (max-width: 760px) {
   .app-shell {
     display: block;
@@ -293,5 +413,29 @@ input {
 
   .page-section h2 {
     font-size: 32px;
+  }
+
+  .dashboard-home__top {
+    align-items: stretch;
+  }
+
+  .quick-capture-button {
+    min-width: 106px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .capture-backdrop {
+    padding: 0;
+  }
+
+  .capture-panel {
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+    border-radius: 8px 8px 0 0;
+    padding-bottom: calc(18px + env(safe-area-inset-bottom));
   }
 }
