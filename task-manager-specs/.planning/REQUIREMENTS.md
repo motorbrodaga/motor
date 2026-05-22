@@ -53,7 +53,7 @@
 
 ### Dashboard
 
-- [ ] **DASH-01**: User sees a main dashboard as the first screen.
+- [x] **DASH-01**: User sees a main dashboard as the first screen.
 - [ ] **DASH-02**: Dashboard shows today, overdue, waiting, important without due date, and category sections.
 - [ ] **DASH-03**: Morning dashboard proposes 3 main tasks for the day.
 - [ ] **DASH-04**: User can confirm the proposed 3 main tasks.
@@ -126,7 +126,7 @@
 - [x] **MOBL-01**: Phone UI feels app-like as far as the selected stack allows.
 - [x] **MOBL-02**: Mobile bottom navigation includes Dashboard, Inbox, Waiting, Review, More.
 - [x] **MOBL-03**: More section does not include separate "All tasks" and "Categories" items in the MVP.
-- [ ] **MOBL-04**: Quick task capture is available from the mobile experience.
+- [x] **MOBL-04**: Quick task capture is available from the mobile experience.
 
 ## v2 Requirements
 
@@ -176,11 +176,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | ACCS-01 | Phase 1 | Complete |
 | ACCS-02 | Phase 1 | Complete |
 | ACCS-03 | Phase 1 | Complete |
-| DASH-01 | Phase 1 | Pending |
+| DASH-01 | Phase 1 | Complete |
 | MOBL-01 | Phase 1 | Complete |
 | MOBL-02 | Phase 1 | Complete |
 | MOBL-03 | Phase 1 | Complete |
-| MOBL-04 | Phase 1 | Pending |
+| MOBL-04 | Phase 1 | Complete |
 | TASK-01 | Phase 2 | Pending |
 | TASK-02 | Phase 2 | Pending |
 | TASK-03 | Phase 2 | Pending |

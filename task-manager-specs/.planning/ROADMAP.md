@@ -13,7 +13,7 @@ This roadmap builds Задачник as a vertical MVP: first a usable personal 
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Personal App Shell** - Open Задачник from phone/desktop, access it privately, and navigate the mobile app shell.
+- [x] **Phase 1: Personal App Shell** - Open Задачник from phone/desktop, access it privately, and navigate the mobile app shell. (completed 2026-05-22)
 - [ ] **Phase 2: Core Task System** - Create, edit, organize, schedule, and act on tasks with categories, contexts, projects, and notes.
 - [ ] **Phase 3: Assistant Capture** - Capture tasks through assistant dialogue with confirmation before save.
 - [ ] **Phase 4: Daily Focus Dashboard** - Show today's work, propose 3 main tasks, and let the user confirm or adjust them.
@@ -53,7 +53,7 @@ Plans:
 
 **Wave 3** *(blocked on Wave 2 completion)*
 
-- [ ] 01-04: Add dashboard entry and quick capture entry point
+- [x] 01-04: Add dashboard entry and quick capture entry point
 
 ### Phase 2: Core Task System
 
@@ -263,7 +263,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Personal App Shell | 3/4 | In Progress|  |
+| 1. Personal App Shell | 4/4 | Complete    | 2026-05-22 |
 | 2. Core Task System | 0/5 | Not started | - |
 | 3. Assistant Capture | 0/3 | Not started | - |
 | 4. Daily Focus Dashboard | 0/4 | Not started | - |
