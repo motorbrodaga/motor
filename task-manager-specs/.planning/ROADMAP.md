@@ -73,10 +73,21 @@ Plans:
 
 Plans:
 
+**Wave 1**
+
 - [ ] 02-01: Define task, category, context, project, and note data model
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
 - [ ] 02-02: Implement task CRUD, status, archive/delete, and completion
-- [ ] 02-03: Implement scheduling fields, urgency/importance, estimated and actual time
 - [ ] 02-04: Implement categories, contexts, and lightweight projects
+
+**Wave 3** *(blocked on Wave 2 completion)*
+
+- [ ] 02-03: Implement scheduling fields, urgency/importance, estimated and actual time
+
+**Wave 4** *(blocked on Wave 3 completion)*
+
 - [ ] 02-05: Implement task-card quick actions and notes feed
 
 ### Phase 3: Assistant Capture
