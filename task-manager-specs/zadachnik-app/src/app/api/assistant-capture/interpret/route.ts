@@ -28,7 +28,13 @@ export async function POST(request: NextRequest) {
       }))
     });
 
-    return NextResponse.json({ interpretation });
+    return NextResponse.json({
+      interpretation,
+      categoryOptions: categories.map((category) => ({
+        id: category.id,
+        name: category.name
+      }))
+    });
   } catch (error) {
     return apiError(error);
   }
