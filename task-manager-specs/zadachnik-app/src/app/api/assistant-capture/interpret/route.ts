@@ -1,0 +1,35 @@
+import { NextResponse, type NextRequest } from "next/server";
+import { requireApiSession, apiError } from "@/lib/api-session";
+import { interpretTaskCapture } from "@/lib/assistant-capture/interpret-task-capture";
+import { getOrganizationOptions } from "@/lib/tasks/task-queries";
+import { cleanText } from "@/lib/tasks/task-validation";
+
+export async function POST(request: NextRequest) {
+  const { response } = await requireApiSession(request);
+
+  if (response) {
+    return response;
+  }
+
+  try {
+    const payload = (await request.json().catch(() => ({}))) as { phrase?: unknown };
+    const phrase = cleanText(payload.phrase);
+
+    if (!phrase) {
+      throw new Error("Введите, что нужно не забыть.");
+    }
+
+    const { categories } = await getOrganizationOptions();
+    const interpretation = interpretTaskCapture({
+      phrase,
+      categories: categories.map((category) => ({
+        id: category.id,
+        name: category.name
+      }))
+    });
+
+    return NextResponse.json({ interpretation });
+  } catch (error) {
+    return apiError(error);
+  }
+}
