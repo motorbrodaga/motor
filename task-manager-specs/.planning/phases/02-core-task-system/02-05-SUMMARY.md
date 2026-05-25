@@ -24,10 +24,9 @@ completed: 2026-05-25
 ## Human Verification
 
 - Automated checks pass.
-- Manual phone/desktop visual review is still useful before considering Phase 2 fully accepted by the user.
+- User approved phone/desktop visual review on 2026-05-25.
 
 ## Notes
 
 - Person assignment is stored as lightweight `personLabel`.
 - Waiting direction, response due dates, and follow-up behavior remain deferred to Phase 5.
-

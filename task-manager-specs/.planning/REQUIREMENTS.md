@@ -16,32 +16,32 @@
 
 ### Tasks
 
-- [ ] **TASK-01**: User can quickly create a task from a short title without filling project, due date, or priority.
-- [ ] **TASK-02**: User can edit an existing task.
-- [ ] **TASK-03**: User can mark a task complete.
-- [ ] **TASK-04**: User can delete or archive a task without exposing a separate archive workflow in the MVP UI.
-- [ ] **TASK-05**: User can set task status: inbox, to do, in progress, waiting, complete.
-- [ ] **TASK-06**: User can set task importance separately from urgency.
-- [ ] **TASK-07**: User can set urgency as a binary urgent / not urgent field.
-- [ ] **TASK-08**: User can set a due date that means the deadline for completion.
-- [ ] **TASK-09**: User can set a do date that means the day the user plans to work on the task.
-- [ ] **TASK-10**: User can set estimated task duration manually.
-- [ ] **TASK-11**: User can record actual time spent manually after or during task work.
-- [ ] **TASK-12**: User can add and edit a task description.
-- [ ] **TASK-13**: User can add notes as a chronological notes/comments feed on the task.
-- [ ] **TASK-14**: User can leave unknown task fields empty after confirming the task.
-- [ ] **TASK-15**: User can use quick actions on a task card: complete, reschedule, change importance, add note, assign person.
-- [ ] **TASK-16**: User can reschedule a task with quick options: tomorrow, in a week, or choose date.
+- [x] **TASK-01**: User can quickly create a task from a short title without filling project, due date, or priority.
+- [x] **TASK-02**: User can edit an existing task.
+- [x] **TASK-03**: User can mark a task complete.
+- [x] **TASK-04**: User can delete or archive a task without exposing a separate archive workflow in the MVP UI.
+- [x] **TASK-05**: User can set task status: inbox, to do, in progress, waiting, complete.
+- [x] **TASK-06**: User can set task importance separately from urgency.
+- [x] **TASK-07**: User can set urgency as a binary urgent / not urgent field.
+- [x] **TASK-08**: User can set a due date that means the deadline for completion.
+- [x] **TASK-09**: User can set a do date that means the day the user plans to work on the task.
+- [x] **TASK-10**: User can set estimated task duration manually.
+- [x] **TASK-11**: User can record actual time spent manually after or during task work.
+- [x] **TASK-12**: User can add and edit a task description.
+- [x] **TASK-13**: User can add notes as a chronological notes/comments feed on the task.
+- [x] **TASK-14**: User can leave unknown task fields empty after confirming the task.
+- [x] **TASK-15**: User can use quick actions on a task card: complete, reschedule, change importance, add note, assign person.
+- [x] **TASK-16**: User can reschedule a task with quick options: tomorrow, in a week, or choose date.
 
 ### Organization
 
-- [ ] **ORGN-01**: User can use default categories: work, personal, calls, household.
-- [ ] **ORGN-02**: User can create custom categories.
-- [ ] **ORGN-03**: User can assign a visible color to each category.
-- [ ] **ORGN-04**: User can assign one or more contexts to a task.
-- [ ] **ORGN-05**: User can use default contexts: call, computer, home, on the go, with person.
-- [ ] **ORGN-06**: User can create custom contexts.
-- [ ] **ORGN-07**: User can optionally associate a task with a project without requiring heavy project methodology.
+- [x] **ORGN-01**: User can use default categories: work, personal, calls, household.
+- [x] **ORGN-02**: User can create custom categories.
+- [x] **ORGN-03**: User can assign a visible color to each category.
+- [x] **ORGN-04**: User can assign one or more contexts to a task.
+- [x] **ORGN-05**: User can use default contexts: call, computer, home, on the go, with person.
+- [x] **ORGN-06**: User can create custom contexts.
+- [x] **ORGN-07**: User can optionally associate a task with a project without requiring heavy project methodology.
 
 ### Assistant Capture
 
@@ -181,29 +181,29 @@ Which phases cover which requirements. Updated during roadmap creation.
 | MOBL-02 | Phase 1 | Complete |
 | MOBL-03 | Phase 1 | Complete |
 | MOBL-04 | Phase 1 | Complete |
-| TASK-01 | Phase 2 | Pending |
-| TASK-02 | Phase 2 | Pending |
-| TASK-03 | Phase 2 | Pending |
-| TASK-04 | Phase 2 | Pending |
-| TASK-05 | Phase 2 | Pending |
-| TASK-06 | Phase 2 | Pending |
-| TASK-07 | Phase 2 | Pending |
-| TASK-08 | Phase 2 | Pending |
-| TASK-09 | Phase 2 | Pending |
-| TASK-10 | Phase 2 | Pending |
-| TASK-11 | Phase 2 | Pending |
-| TASK-12 | Phase 2 | Pending |
-| TASK-13 | Phase 2 | Pending |
-| TASK-14 | Phase 2 | Pending |
-| TASK-15 | Phase 2 | Pending |
-| TASK-16 | Phase 2 | Pending |
-| ORGN-01 | Phase 2 | Pending |
-| ORGN-02 | Phase 2 | Pending |
-| ORGN-03 | Phase 2 | Pending |
-| ORGN-04 | Phase 2 | Pending |
-| ORGN-05 | Phase 2 | Pending |
-| ORGN-06 | Phase 2 | Pending |
-| ORGN-07 | Phase 2 | Pending |
+| TASK-01 | Phase 2 | Complete |
+| TASK-02 | Phase 2 | Complete |
+| TASK-03 | Phase 2 | Complete |
+| TASK-04 | Phase 2 | Complete |
+| TASK-05 | Phase 2 | Complete |
+| TASK-06 | Phase 2 | Complete |
+| TASK-07 | Phase 2 | Complete |
+| TASK-08 | Phase 2 | Complete |
+| TASK-09 | Phase 2 | Complete |
+| TASK-10 | Phase 2 | Complete |
+| TASK-11 | Phase 2 | Complete |
+| TASK-12 | Phase 2 | Complete |
+| TASK-13 | Phase 2 | Complete |
+| TASK-14 | Phase 2 | Complete |
+| TASK-15 | Phase 2 | Complete |
+| TASK-16 | Phase 2 | Complete |
+| ORGN-01 | Phase 2 | Complete |
+| ORGN-02 | Phase 2 | Complete |
+| ORGN-03 | Phase 2 | Complete |
+| ORGN-04 | Phase 2 | Complete |
+| ORGN-05 | Phase 2 | Complete |
+| ORGN-06 | Phase 2 | Complete |
+| ORGN-07 | Phase 2 | Complete |
 | CAPT-01 | Phase 3 | Pending |
 | CAPT-02 | Phase 3 | Pending |
 | CAPT-03 | Phase 3 | Pending |

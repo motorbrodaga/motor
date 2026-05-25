@@ -14,7 +14,7 @@ This roadmap builds Задачник as a vertical MVP: first a usable personal 
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Personal App Shell** - Open Задачник from phone/desktop, access it privately, and navigate the mobile app shell. (completed 2026-05-22)
-- [ ] **Phase 2: Core Task System** - Create, edit, organize, schedule, and act on tasks with categories, contexts, projects, and notes.
+- [x] **Phase 2: Core Task System** - Create, edit, organize, schedule, and act on tasks with categories, contexts, projects, and notes. (completed 2026-05-25)
 - [ ] **Phase 3: Assistant Capture** - Capture tasks through assistant dialogue with confirmation before save.
 - [ ] **Phase 4: Daily Focus Dashboard** - Show today's work, propose 3 main tasks, and let the user confirm or adjust them.
 - [ ] **Phase 5: Waiting And People** - Track people-related tasks in both waiting directions.
@@ -75,20 +75,20 @@ Plans:
 
 **Wave 1**
 
-- [ ] 02-01: Define task, category, context, project, and note data model
+- [x] 02-01: Define task, category, context, project, and note data model
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
-- [ ] 02-02: Implement task CRUD, status, archive/delete, and completion
-- [ ] 02-04: Implement categories, contexts, and lightweight projects
+- [x] 02-02: Implement task CRUD, status, archive/delete, and completion
+- [x] 02-04: Implement categories, contexts, and lightweight projects
 
 **Wave 3** *(blocked on Wave 2 completion)*
 
-- [ ] 02-03: Implement scheduling fields, urgency/importance, estimated and actual time
+- [x] 02-03: Implement scheduling fields, urgency/importance, estimated and actual time
 
 **Wave 4** *(blocked on Wave 3 completion)*
 
-- [ ] 02-05: Implement task-card quick actions and notes feed
+- [x] 02-05: Implement task-card quick actions and notes feed
 
 ### Phase 3: Assistant Capture
 
@@ -275,7 +275,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Personal App Shell | 4/4 | Complete    | 2026-05-22 |
-| 2. Core Task System | 0/5 | Not started | - |
+| 2. Core Task System | 5/5 | Complete    | 2026-05-25 |
 | 3. Assistant Capture | 0/3 | Not started | - |
 | 4. Daily Focus Dashboard | 0/4 | Not started | - |
 | 5. Waiting And People | 0/3 | Not started | - |
