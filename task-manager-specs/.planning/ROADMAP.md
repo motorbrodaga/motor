@@ -107,8 +107,16 @@ Plans:
 
 Plans:
 
+**Wave 1**
+
 - [ ] 03-01: Design assistant capture flow and confirmation contract
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
 - [ ] 03-02: Implement clarification and task-card preparation
+
+**Wave 3** *(blocked on Wave 2 completion)*
+
 - [ ] 03-03: Save confirmed assistant-created tasks into the core task system
 
 ### Phase 4: Daily Focus Dashboard
