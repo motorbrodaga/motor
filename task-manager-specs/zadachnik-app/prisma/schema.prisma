@@ -28,3 +28,94 @@ model ShellEvent {
   createdAt    DateTime @default(now())
   metadataJson String?
 }
+
+model Task {
+  id               String        @id @default(cuid())
+  title            String
+  description      String?
+  status           String        @default("inbox")
+  importance       String        @default("normal")
+  isUrgent         Boolean       @default(false)
+  dueDate          DateTime?
+  doDate           DateTime?
+  estimatedMinutes Int?
+  actualMinutes    Int?
+  personLabel      String?
+  completedAt      DateTime?
+  archivedAt       DateTime?
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  categoryId String?
+  category   Category? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+
+  projectId String?
+  project   Project? @relation(fields: [projectId], references: [id], onDelete: SetNull)
+
+  contexts TaskContext[]
+  notes    TaskNote[]
+
+  @@index([status, archivedAt])
+  @@index([doDate])
+  @@index([dueDate])
+  @@index([categoryId])
+  @@index([projectId])
+}
+
+model Category {
+  id            String    @id @default(cuid())
+  name          String    @unique
+  color         String
+  systemDefault Boolean   @default(false)
+  archivedAt    DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  tasks Task[]
+}
+
+model Context {
+  id            String    @id @default(cuid())
+  name          String    @unique
+  systemDefault Boolean   @default(false)
+  archivedAt    DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  tasks TaskContext[]
+}
+
+model TaskContext {
+  taskId    String
+  contextId String
+  createdAt DateTime @default(now())
+
+  task    Task    @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  context Context @relation(fields: [contextId], references: [id], onDelete: Cascade)
+
+  @@id([taskId, contextId])
+  @@index([contextId])
+}
+
+model Project {
+  id          String    @id @default(cuid())
+  name        String    @unique
+  description String?
+  archivedAt  DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  tasks Task[]
+}
+
+model TaskNote {
+  id        String   @id @default(cuid())
+  taskId    String
+  body      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  task Task @relation(fields: [taskId], references: [id], onDelete: Cascade)
+
+  @@index([taskId, createdAt])
+}
