@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 type QuickCapturePanelProps = {
@@ -15,8 +16,11 @@ async function recordShellEvent(kind: string, title?: string) {
 }
 
 export function QuickCapturePanel({ onClose }: QuickCapturePanelProps) {
+  const router = useRouter();
   const [title, setTitle] = useState("");
-  const [saved, setSaved] = useState(false);
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
+  const [busy, setBusy] = useState(false);
 
   useEffect(() => {
     void recordShellEvent("quick_capture.opened");
@@ -24,8 +28,27 @@ export function QuickCapturePanel({ onClose }: QuickCapturePanelProps) {
 
   async function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    await recordShellEvent("quick_capture.submitted_placeholder", title);
-    setSaved(true);
+    setBusy(true);
+    setError("");
+    setMessage("");
+
+    const response = await fetch("/api/tasks", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ title })
+    });
+
+    setBusy(false);
+
+    if (!response.ok) {
+      const payload = (await response.json().catch(() => ({}))) as { error?: string };
+      setError(payload.error ?? "Проверьте поля и попробуйте еще раз.");
+      return;
+    }
+
+    setTitle("");
+    setMessage("Задача добавлена во входящие.");
+    router.refresh();
   }
 
   return (
@@ -40,23 +63,25 @@ export function QuickCapturePanel({ onClose }: QuickCapturePanelProps) {
 
         <form className="capture-form" onSubmit={submit}>
           <label>
-            <span>Коротко</span>
+            <span>Новая задача</span>
             <input
               value={title}
               onChange={(event) => setTitle(event.target.value)}
-              placeholder="Например: позвонить по документам"
+              placeholder="Что нужно не забыть?"
             />
           </label>
-          <button className="primary-button" type="submit">
-            Проверить ввод
+          <button className="primary-button" type="submit" disabled={busy}>
+            Добавить
           </button>
         </form>
 
-        {saved ? (
-          <p className="capture-note">Сохранение задач появится в следующей фазе.</p>
+        {error ? <p className="form-error">{error}</p> : null}
+
+        {message ? (
+          <p className="capture-note">{message}</p>
         ) : (
           <p className="capture-note">
-            Сейчас это вход в быстрый ввод. Реальные задачи появятся после модели задач.
+            Добавьте короткую формулировку. Детали можно заполнить позже.
           </p>
         )}
       </section>

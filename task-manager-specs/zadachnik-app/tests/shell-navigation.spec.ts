@@ -1,11 +1,12 @@
 import { test, expect } from "@playwright/test";
-import { closeDb, resetAccessToken } from "./helpers/access";
+import { closeDb, resetAccessToken, seedOrganizationDefaults } from "./helpers/access";
 
-const token = "phase-one-navigation-token";
+const token = "phase-two-navigation-token";
 const navLabels = ["Панель", "Входящие", "Ожидания", "Обзор", "Еще"];
 
 test.beforeEach(async ({ page }) => {
   await resetAccessToken(token);
+  await seedOrganizationDefaults();
   await page.goto(`/a/${token}`);
 });
 
@@ -25,7 +26,7 @@ test("mobile shell shows Russian bottom navigation", async ({ page, isMobile }) 
   await expect(page.getByRole("heading", { name: "Ожидания" })).toBeVisible();
 });
 
-test("desktop shell navigates all sections and More keeps MVP scope", async ({ page, isMobile }) => {
+test("desktop shell navigates MVP sections and More exposes Phase 2 management", async ({ page, isMobile }) => {
   test.skip(isMobile, "desktop viewport only");
 
   for (const label of navLabels) {
@@ -37,5 +38,7 @@ test("desktop shell navigates all sections and More keeps MVP scope", async ({ p
   await page.getByRole("link", { name: "Еще" }).click();
   await expect(page).toHaveURL(/\/more$/);
   await expect(page.getByText("Все задачи")).toHaveCount(0);
-  await expect(page.getByText("Категории")).toHaveCount(0);
+  await expect(page.getByRole("link", { name: "Категории" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Контексты" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Проекты" })).toBeVisible();
 });

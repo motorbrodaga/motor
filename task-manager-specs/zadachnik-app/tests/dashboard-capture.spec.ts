@@ -1,12 +1,17 @@
 import { test, expect } from "@playwright/test";
 import { PrismaClient } from "@prisma/client";
-import { closeDb, resetAccessToken } from "./helpers/access";
+import {
+  closeDb,
+  resetAccessToken,
+  seedOrganizationDefaults
+} from "./helpers/access";
 
 const prisma = new PrismaClient();
-const token = "phase-one-capture-token";
+const token = "phase-two-capture-token";
 
 test.beforeEach(async ({ page }) => {
   await resetAccessToken(token);
+  await seedOrganizationDefaults();
   await page.goto(`/a/${token}`);
 });
 
@@ -15,19 +20,21 @@ test.afterAll(async () => {
   await closeDb();
 });
 
-test("Dashboard opens first and quick capture records a shell event", async ({ page }) => {
+test("Dashboard quick capture creates a real inbox task", async ({ page }) => {
   await expect(page).toHaveURL(/\/dashboard$/);
   await expect(page.getByRole("heading", { name: "Панель" })).toBeVisible();
 
   await page.getByRole("button", { name: "Быстро" }).click();
   await expect(page.getByRole("heading", { name: "Новая задача" })).toBeVisible();
-  await page.getByLabel("Коротко").fill("Позвонить по документам");
-  await page.getByRole("button", { name: "Проверить ввод" }).click();
-  await expect(page.getByText("Сохранение задач появится в следующей фазе.")).toBeVisible();
+  await page.getByRole("textbox", { name: "Новая задача" }).fill("Позвонить по документам");
+  await page.getByRole("button", { name: "Добавить" }).click();
+  await expect(page.getByText("Задача добавлена во входящие.")).toBeVisible();
 
   await expect
-    .poll(async () => prisma.shellEvent.count({
-      where: { kind: "quick_capture.submitted_placeholder" }
-    }))
-    .toBeGreaterThan(0);
+    .poll(async () => prisma.task.count({ where: { title: "Позвонить по документам" } }))
+    .toBe(1);
+
+  await page.waitForTimeout(500);
+  await page.goto("/inbox");
+  await expect(page.getByRole("link", { name: "Позвонить по документам" })).toBeVisible();
 });

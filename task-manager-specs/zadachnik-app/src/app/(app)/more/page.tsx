@@ -7,6 +7,9 @@ export default function MorePage() {
       <h2>Еще</h2>
       <div className="settings-list">
         <Link href="/more/access">Приватная ссылка</Link>
+        <Link href="/more/categories">Категории</Link>
+        <Link href="/more/contexts">Контексты</Link>
+        <Link href="/more/projects">Проекты</Link>
       </div>
     </section>
   );

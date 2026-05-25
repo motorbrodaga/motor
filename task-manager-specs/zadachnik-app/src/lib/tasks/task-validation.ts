@@ -42,7 +42,7 @@ export function optionalDate(value: unknown) {
     return null;
   }
 
-  const date = new Date(`${text}T00:00:00`);
+  const date = new Date(`${text}T00:00:00.000Z`);
 
   if (Number.isNaN(date.getTime())) {
     throw new Error("Некорректная дата.");

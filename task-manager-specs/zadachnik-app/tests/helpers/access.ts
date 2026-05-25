@@ -2,6 +2,13 @@ import { createHash } from "node:crypto";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
+const defaultCategories = [
+  { name: "Работа", color: "#2f6fbb" },
+  { name: "Личное", color: "#8a5fbf" },
+  { name: "Звонки", color: "#c27a22" },
+  { name: "Дом", color: "#3f7d46" }
+] as const;
+const defaultContexts = ["Звонок", "Компьютер", "Дом", "В дороге", "С человеком"] as const;
 
 function hashToken(token: string) {
   const pepper = process.env.ACCESS_TOKEN_PEPPER ?? "development-only-pepper";
@@ -30,10 +37,6 @@ export async function resetTaskData() {
 }
 
 export async function seedOrganizationDefaults() {
-  const { defaultCategories, defaultContexts } = await import(
-    "../../src/lib/tasks/task-options"
-  );
-
   for (const category of defaultCategories) {
     await prisma.category.upsert({
       where: { name: category.name },
