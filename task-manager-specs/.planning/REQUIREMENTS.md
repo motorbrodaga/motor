@@ -47,7 +47,7 @@
 
 - [x] **CAPT-01**: User can create a task through assistant dialogue as a primary capture path.
 - [x] **CAPT-02**: Assistant clarifies missing task details or shows its understanding before saving.
-- [ ] **CAPT-03**: Assistant saves a task only after user confirmation.
+- [x] **CAPT-03**: Assistant saves a task only after user confirmation.
 - [x] **CAPT-04**: Assistant can ask about what needs to be done, category, due date, do date, estimated time, importance, waiting person, and waiting direction.
 - [x] **CAPT-05**: Assistant can prepare a task card from incomplete information and ask the user to confirm before saving.
 
@@ -206,7 +206,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | ORGN-07 | Phase 2 | Complete |
 | CAPT-01 | Phase 3 | Complete |
 | CAPT-02 | Phase 3 | Complete |
-| CAPT-03 | Phase 3 | Pending |
+| CAPT-03 | Phase 3 | Complete |
 | CAPT-04 | Phase 3 | Complete |
 | CAPT-05 | Phase 3 | Complete |
 | DASH-02 | Phase 4 | Pending |
