@@ -36,7 +36,7 @@ test("assistant parser recognizes date category and importance", async () => {
     now
   });
 
-  expect(result.draft.title).toContain("письмо");
+  expect(result.draft.title).toBe("письмо");
   expect(result.draft.doDate).toBe("2026-05-27");
   expect(result.draft.dueDate).toBeNull();
   expect(result.draft.categoryId).toBe("work");

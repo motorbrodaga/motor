@@ -40,6 +40,7 @@ type DateMatch = {
   matchedText: string;
 };
 
+const russianWordTail = String.raw`[\p{L}\p{M}\d_-]*`;
 const isoDatePattern = /\b(\d{4}-\d{2}-\d{2})\b/;
 const importantWords = ["важно", "важная", "важное", "важный", "приоритет", "приоритетно"];
 const deadlineWords = ["дедлайн", "срок", "крайний срок", "крайнему сроку"];
@@ -138,11 +139,11 @@ function stripKnownSignals(phrase: string, dateMatch: DateMatch | null, category
   }
 
   title = title
-    .replace(/важн\w*/gi, " ")
-    .replace(/приоритет\w*/gi, " ")
-    .replace(/крайн\w*\s+срок\w*/gi, " ")
-    .replace(/дедлайн\w*/gi, " ")
-    .replace(/срок\w*/gi, " ")
+    .replace(new RegExp(`важн${russianWordTail}`, "giu"), " ")
+    .replace(new RegExp(`приоритет${russianWordTail}`, "giu"), " ")
+    .replace(new RegExp(`крайн${russianWordTail}\\s+срок${russianWordTail}`, "giu"), " ")
+    .replace(new RegExp(`дедлайн${russianWordTail}`, "giu"), " ")
+    .replace(new RegExp(`срок${russianWordTail}`, "giu"), " ")
     .replace(/задача|надо|нужно|сделать/gi, " ")
     .replace(/\s+/g, " ")
     .trim();
