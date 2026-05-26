@@ -136,9 +136,20 @@ Plans:
 
 Plans:
 
+**Wave 1**
+
 - [ ] 04-01: Build dashboard sections and empty states
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
 - [ ] 04-02: Implement top-3 ranking rules
+
+**Wave 3** *(blocked on Wave 2 completion)*
+
 - [ ] 04-03: Implement confirmation and manual replacement of top-3 tasks
+
+**Wave 4** *(blocked on Wave 3 completion)*
+
 - [ ] 04-04: Add "other for today" behavior and dashboard polish
 
 ### Phase 5: Waiting And People
