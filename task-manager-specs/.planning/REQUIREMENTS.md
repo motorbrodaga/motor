@@ -54,7 +54,7 @@
 ### Dashboard
 
 - [x] **DASH-01**: User sees a main dashboard as the first screen.
-- [ ] **DASH-02**: Dashboard shows today, overdue, waiting, important without due date, and category sections.
+- [x] **DASH-02**: Dashboard shows today, overdue, waiting, important without due date, and category sections.
 - [ ] **DASH-03**: Morning dashboard proposes 3 main tasks for the day.
 - [ ] **DASH-04**: User can confirm the proposed 3 main tasks.
 - [ ] **DASH-05**: User can manually replace any proposed main task.
@@ -209,7 +209,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CAPT-03 | Phase 3 | Complete |
 | CAPT-04 | Phase 3 | Complete |
 | CAPT-05 | Phase 3 | Complete |
-| DASH-02 | Phase 4 | Pending |
+| DASH-02 | Phase 4 | Complete |
 | DASH-03 | Phase 4 | Pending |
 | DASH-04 | Phase 4 | Pending |
 | DASH-05 | Phase 4 | Pending |

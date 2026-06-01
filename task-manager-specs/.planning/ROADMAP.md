@@ -138,7 +138,7 @@ Plans:
 
 **Wave 1**
 
-- [ ] 04-01: Build dashboard sections and empty states
+- [x] 04-01: Build dashboard sections and empty states
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
@@ -296,7 +296,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
 | 1. Personal App Shell | 4/4 | Complete    | 2026-05-22 |
 | 2. Core Task System | 5/5 | Complete    | 2026-05-25 |
 | 3. Assistant Capture | 3/3 | Complete    | 2026-05-27 |
-| 4. Daily Focus Dashboard | 0/4 | Not started | - |
+| 4. Daily Focus Dashboard | 1/4 | In Progress|  |
 | 5. Waiting And People | 0/3 | Not started | - |
 | 6. Soft Reviews | 0/4 | Not started | - |
 | 7. Completion History | 0/3 | Not started | - |
