@@ -1,7 +1,9 @@
 import { QuickCaptureEntry } from "@/features/capture/QuickCaptureEntry";
+import { DailyFocusSuggestions } from "@/features/dashboard/DailyFocusSuggestions";
 import { TaskCard } from "@/features/tasks/TaskCard";
 import type { TaskView } from "@/features/tasks/task-types";
 import { getDashboardSections } from "@/lib/dashboard/dashboard-sections";
+import { rankDailyFocusTasks } from "@/lib/dashboard/focus-ranking";
 
 export const dynamic = "force-dynamic";
 
@@ -40,6 +42,7 @@ function DashboardTaskSection({ title, description, tasks, empty }: DashboardTas
 
 export async function DashboardHome() {
   const sections = await getDashboardSections();
+  const focus = rankDailyFocusTasks(sections.openTasks, sections.today);
 
   return (
     <section className="dashboard-home">
@@ -50,6 +53,11 @@ export async function DashboardHome() {
         </div>
         <QuickCaptureEntry />
       </div>
+
+      <DailyFocusSuggestions
+        suggestions={focus.suggestions}
+        otherForToday={focus.otherForToday}
+      />
 
       <DashboardTaskSection
         title="Сегодня"

@@ -75,7 +75,7 @@ test("dashboard sections show open work and hide completed or archived tasks", a
   await page.goto(`/a/${token}`);
   await expect(page).toHaveURL(/\/dashboard$/);
 
-  await expect(page.getByRole("heading", { name: "Сегодня" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Сегодня", exact: true })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Просрочено" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Ожидания" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Важное без срока" })).toBeVisible();
@@ -84,7 +84,7 @@ test("dashboard sections show open work and hide completed or archived tasks", a
   await expect(page.getByRole("link", { name: "Сегодня подготовить письмо" }).first()).toBeVisible();
   await expect(page.getByRole("link", { name: "Просроченный отчет" }).first()).toBeVisible();
   await expect(page.getByRole("link", { name: "Жду ответ от Ивана" }).first()).toBeVisible();
-  await expect(page.getByRole("link", { name: "Важная идея без срока" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Важная идея без срока" }).first()).toBeVisible();
   await expect(page.getByRole("heading", { name: "Работа" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Дом" })).toBeVisible();
 

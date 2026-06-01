@@ -12,6 +12,7 @@ export type DashboardCategorySection = {
 };
 
 export type DashboardSections = {
+  openTasks: TaskView[];
   today: TaskView[];
   overdue: TaskView[];
   waiting: TaskView[];
@@ -42,7 +43,12 @@ export async function getDashboardSections(now = new Date()): Promise<DashboardS
   const todayStart = startOfLocalDay(now);
   const tomorrowStart = addDays(todayStart, 1);
 
-  const [today, overdue, waiting, importantWithoutDueDate, categories] = await Promise.all([
+  const [openTasks, today, overdue, waiting, importantWithoutDueDate, categories] = await Promise.all([
+    prisma.task.findMany({
+      where: openTaskWhere,
+      include: taskInclude,
+      orderBy: [{ updatedAt: "desc" }]
+    }),
     prisma.task.findMany({
       where: {
         ...openTaskWhere,
@@ -114,6 +120,7 @@ export async function getDashboardSections(now = new Date()): Promise<DashboardS
   );
 
   return {
+    openTasks: openTasks.map(serializeTask),
     today: today.map(serializeTask),
     overdue: overdue.map(serializeTask),
     waiting: waiting.map(serializeTask),
