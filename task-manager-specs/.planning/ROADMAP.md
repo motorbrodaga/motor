@@ -170,9 +170,24 @@ Plans:
 
 Plans:
 
+**Wave 1**
+
 - [ ] 05-01: Implement people and waiting-direction model
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
 - [ ] 05-02: Build waiting UI and response due-date handling
+
+**Wave 3** *(blocked on Wave 2 completion)*
+
 - [ ] 05-03: Add one-week follow-up behavior for waiting-on-others tasks
+
+**Cross-cutting constraints:**
+
+- D-04: The two user-facing directions are ждут от меня and я жду.
+- D-05: Waiting state should be derived from person plus waiting direction, not from a separate tag.
+- D-12: The waiting screen should separate or clearly distinguish ждут от меня from я жду.
+- D-13: The screen should stay mobile-first and Russian-only, matching the existing app style.
 
 ### Phase 6: Soft Reviews
 
