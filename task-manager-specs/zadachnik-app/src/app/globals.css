@@ -12,6 +12,7 @@
   --accent: #1f6f5f;
   --accent-strong: #174f46;
   --danger: #a6423a;
+  --success: #2f7d46;
   --focus: #2b7fff;
 }
 
@@ -1119,6 +1120,33 @@ textarea {
 
   .dashboard-grid {
     grid-template-columns: 1fr;
+  }
+
+  .daily-focus,
+  .dashboard-section {
+    padding: 16px;
+  }
+
+  .daily-focus__header,
+  .dashboard-section__header {
+    align-items: flex-start;
+  }
+
+  .daily-focus__suggestion {
+    padding: 8px;
+  }
+
+  .focus-slot-controls__actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .focus-slot-controls__actions .primary-button,
+  .focus-slot-controls__actions .secondary-button,
+  .focus-slot-controls__picker .secondary-button {
+    width: 100%;
+    min-width: 0;
+    white-space: normal;
   }
 
   .task-form__row {

@@ -16,6 +16,6 @@ test.afterAll(async () => {
 test("private link opens the task shell on desktop and mobile", async ({ page }) => {
   await expect(page).toHaveURL(/\/dashboard$/);
   await expect(page.getByRole("heading", { name: "Панель" })).toBeVisible();
-  await expect(page.getByText("Открытые задачи")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Предлагаю 3 главные задачи" })).toBeVisible();
   await expect(page.getByRole("button", { name: "Быстро" })).toBeVisible();
 });
