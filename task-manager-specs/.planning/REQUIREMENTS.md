@@ -55,15 +55,15 @@
 
 - [x] **DASH-01**: User sees a main dashboard as the first screen.
 - [x] **DASH-02**: Dashboard shows today, overdue, waiting, important without due date, and category sections.
-- [ ] **DASH-03**: Morning dashboard proposes 3 main tasks for the day.
+- [x] **DASH-03**: Morning dashboard proposes 3 main tasks for the day.
 - [ ] **DASH-04**: User can confirm the proposed 3 main tasks.
 - [ ] **DASH-05**: User can manually replace any proposed main task.
 - [ ] **DASH-06**: Unconfirmed proposed main tasks remain suggestions and are not treated as selected.
-- [ ] **DASH-07**: Dashboard includes an "other for today" block alongside the 3 main tasks.
-- [ ] **DASH-08**: System ranks main task suggestions with urgency above importance.
-- [ ] **DASH-09**: System gives extra ranking weight to tasks where another person is waiting for the user.
-- [ ] **DASH-10**: System includes overdue tasks in the top 3 only when they are important or urgent.
-- [ ] **DASH-11**: Task size does not exclude a task from main-task suggestions.
+- [x] **DASH-07**: Dashboard includes an "other for today" block alongside the 3 main tasks.
+- [x] **DASH-08**: System ranks main task suggestions with urgency above importance.
+- [x] **DASH-09**: System gives extra ranking weight to tasks where another person is waiting for the user.
+- [x] **DASH-10**: System includes overdue tasks in the top 3 only when they are important or urgent.
+- [x] **DASH-11**: Task size does not exclude a task from main-task suggestions.
 
 ### Waiting
 
@@ -210,15 +210,15 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CAPT-04 | Phase 3 | Complete |
 | CAPT-05 | Phase 3 | Complete |
 | DASH-02 | Phase 4 | Complete |
-| DASH-03 | Phase 4 | Pending |
+| DASH-03 | Phase 4 | Complete |
 | DASH-04 | Phase 4 | Pending |
 | DASH-05 | Phase 4 | Pending |
 | DASH-06 | Phase 4 | Pending |
-| DASH-07 | Phase 4 | Pending |
-| DASH-08 | Phase 4 | Pending |
-| DASH-09 | Phase 4 | Pending |
-| DASH-10 | Phase 4 | Pending |
-| DASH-11 | Phase 4 | Pending |
+| DASH-07 | Phase 4 | Complete |
+| DASH-08 | Phase 4 | Complete |
+| DASH-09 | Phase 4 | Complete |
+| DASH-10 | Phase 4 | Complete |
+| DASH-11 | Phase 4 | Complete |
 | WAIT-01 | Phase 5 | Pending |
 | WAIT-02 | Phase 5 | Pending |
 | WAIT-03 | Phase 5 | Pending |
