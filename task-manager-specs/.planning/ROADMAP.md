@@ -16,7 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Personal App Shell** - Open Задачник from phone/desktop, access it privately, and navigate the mobile app shell. (completed 2026-05-22)
 - [x] **Phase 2: Core Task System** - Create, edit, organize, schedule, and act on tasks with categories, contexts, projects, and notes. (completed 2026-05-25)
 - [x] **Phase 3: Assistant Capture** - Capture tasks through assistant dialogue with confirmation before save. (completed 2026-05-25)
-- [ ] **Phase 4: Daily Focus Dashboard** - Show today's work, propose 3 main tasks, and let the user confirm or adjust them.
+- [x] **Phase 4: Daily Focus Dashboard** - Show today's work, propose 3 main tasks, and let the user confirm or adjust them. (completed 2026-06-01)
 - [ ] **Phase 5: Waiting And People** - Track people-related tasks in both waiting directions.
 - [ ] **Phase 6: Soft Reviews** - Bring back forgotten, stale, unscheduled, and waiting tasks through weekly review.
 - [ ] **Phase 7: Completion History** - Show completed work and simple progress statistics.
@@ -150,7 +150,7 @@ Plans:
 
 **Wave 4** *(blocked on Wave 3 completion)*
 
-- [ ] 04-04: Add "other for today" behavior and dashboard polish
+- [x] 04-04: Add "other for today" behavior and dashboard polish
 
 ### Phase 5: Waiting And People
 
@@ -296,7 +296,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
 | 1. Personal App Shell | 4/4 | Complete    | 2026-05-22 |
 | 2. Core Task System | 5/5 | Complete    | 2026-05-25 |
 | 3. Assistant Capture | 3/3 | Complete    | 2026-05-27 |
-| 4. Daily Focus Dashboard | 3/4 | In Progress|  |
+| 4. Daily Focus Dashboard | 4/4 | Complete   | 2026-06-01 |
 | 5. Waiting And People | 0/3 | Not started | - |
 | 6. Soft Reviews | 0/4 | Not started | - |
 | 7. Completion History | 0/3 | Not started | - |
