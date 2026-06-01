@@ -1,12 +1,37 @@
 import { TaskCard } from "@/features/tasks/TaskCard";
+import type { TaskView } from "@/features/tasks/task-types";
+import { FocusSlotControls } from "@/features/dashboard/FocusSlotControls";
+import type { ConfirmedFocusSelection } from "@/lib/dashboard/focus-selection";
 import type { DailyFocusRanking } from "@/lib/dashboard/focus-ranking";
 
-type DailyFocusSuggestionsProps = DailyFocusRanking;
+type DailyFocusSuggestionsProps = DailyFocusRanking & {
+  confirmedSelections: ConfirmedFocusSelection[];
+  replacementCandidates: TaskView[];
+};
 
 export function DailyFocusSuggestions({
   suggestions,
-  otherForToday
+  otherForToday,
+  confirmedSelections,
+  replacementCandidates
 }: DailyFocusSuggestionsProps) {
+  const confirmedBySlot = new Map(
+    confirmedSelections.map((selection) => [selection.slot, selection])
+  );
+  const confirmedTaskIds = new Set(confirmedSelections.map((selection) => selection.taskId));
+  const slots = [0, 1, 2].map((slot) => {
+    const confirmed = confirmedBySlot.get(slot);
+    const suggestion = suggestions[slot];
+    const task = confirmed?.task ?? suggestion?.task ?? null;
+    const reasons = confirmed
+      ? suggestion?.task.id === confirmed.taskId
+        ? suggestion.reasons
+        : ["выбрано вручную"]
+      : suggestion?.reasons ?? [];
+
+    return { slot, confirmed, suggestion, task, reasons };
+  });
+
   return (
     <section className="daily-focus" aria-labelledby="daily-focus-title">
       <div className="daily-focus__header">
@@ -17,27 +42,41 @@ export function DailyFocusSuggestions({
         </div>
       </div>
 
-      {suggestions.length === 0 ? (
+      {slots.every((slot) => !slot.task) ? (
         <div className="empty-state daily-focus__empty">
           <p>Пока нечего предложить в главный фокус.</p>
         </div>
       ) : (
         <div className="daily-focus__suggestions" data-testid="daily-focus-suggestions">
-          {suggestions.map((suggestion, index) => (
-            <div className="daily-focus__suggestion" key={suggestion.task.id}>
+          {slots.map(({ slot, confirmed, task, reasons }) => task ? (
+            <div
+              className="daily-focus__suggestion"
+              data-confirmed={confirmed ? "true" : "false"}
+              data-testid={`focus-slot-${slot}`}
+              key={`${slot}-${task.id}`}
+            >
               <div className="daily-focus__suggestion-meta">
-                <strong>{index + 1}</strong>
-                <span>Предложение</span>
+                <strong>{slot + 1}</strong>
+                <span>{confirmed ? "Подтверждено" : "Предложение"}</span>
                 <div>
                   <span>Почему:</span>
-                  {suggestion.reasons.map((reason) => (
+                  {reasons.map((reason) => (
                     <em key={reason}>{reason}</em>
                   ))}
                 </div>
               </div>
-              <TaskCard task={suggestion.task} compact />
+              <TaskCard task={task} compact />
+              <FocusSlotControls
+                slot={slot}
+                taskId={task.id}
+                confirmed={Boolean(confirmed)}
+                replacementCandidates={replacementCandidates.filter((candidate) => (
+                  candidate.id !== task.id &&
+                  (!confirmedTaskIds.has(candidate.id) || confirmed?.taskId === candidate.id)
+                ))}
+              />
             </div>
-          ))}
+          ) : null)}
         </div>
       )}
 

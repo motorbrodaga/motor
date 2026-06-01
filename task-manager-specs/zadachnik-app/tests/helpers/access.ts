@@ -28,6 +28,7 @@ export async function resetAccessToken(token: string) {
 }
 
 export async function resetTaskData() {
+  await prisma.dailyFocusSelection.deleteMany();
   await prisma.taskNote.deleteMany();
   await prisma.taskContext.deleteMany();
   await prisma.task.deleteMany();

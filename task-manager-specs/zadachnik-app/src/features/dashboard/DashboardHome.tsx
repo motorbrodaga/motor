@@ -3,6 +3,7 @@ import { DailyFocusSuggestions } from "@/features/dashboard/DailyFocusSuggestion
 import { TaskCard } from "@/features/tasks/TaskCard";
 import type { TaskView } from "@/features/tasks/task-types";
 import { getDashboardSections } from "@/lib/dashboard/dashboard-sections";
+import { getConfirmedFocusSelections } from "@/lib/dashboard/focus-selection";
 import { rankDailyFocusTasks } from "@/lib/dashboard/focus-ranking";
 
 export const dynamic = "force-dynamic";
@@ -41,8 +42,13 @@ function DashboardTaskSection({ title, description, tasks, empty }: DashboardTas
 }
 
 export async function DashboardHome() {
-  const sections = await getDashboardSections();
+  const [sections, confirmedSelections] = await Promise.all([
+    getDashboardSections(),
+    getConfirmedFocusSelections()
+  ]);
   const focus = rankDailyFocusTasks(sections.openTasks, sections.today);
+  const confirmedTaskIds = new Set(confirmedSelections.map((selection) => selection.taskId));
+  const otherForToday = focus.otherForToday.filter((task) => !confirmedTaskIds.has(task.id));
 
   return (
     <section className="dashboard-home">
@@ -56,7 +62,9 @@ export async function DashboardHome() {
 
       <DailyFocusSuggestions
         suggestions={focus.suggestions}
-        otherForToday={focus.otherForToday}
+        otherForToday={otherForToday}
+        confirmedSelections={confirmedSelections}
+        replacementCandidates={sections.openTasks}
       />
 
       <DashboardTaskSection

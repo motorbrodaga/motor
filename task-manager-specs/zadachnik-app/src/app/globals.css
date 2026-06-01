@@ -428,6 +428,12 @@ textarea {
 .daily-focus__suggestion {
   display: grid;
   gap: 8px;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.daily-focus__suggestion[data-confirmed="true"] {
+  background: color-mix(in srgb, var(--success) 8%, var(--panel-soft));
 }
 
 .daily-focus__suggestion-meta {
@@ -501,6 +507,37 @@ textarea {
   display: grid;
   gap: 8px;
   opacity: 0.88;
+}
+
+.focus-slot-controls {
+  display: grid;
+  gap: 8px;
+}
+
+.focus-slot-controls__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.focus-slot-controls__actions .primary-button,
+.focus-slot-controls__actions .secondary-button,
+.focus-slot-controls__picker .secondary-button {
+  min-height: 40px;
+}
+
+.focus-slot-controls__picker {
+  display: grid;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel-soft);
+  padding: 10px;
+}
+
+.focus-slot-controls__picker p {
+  margin: 0;
+  color: var(--muted);
 }
 
 .capture-backdrop {

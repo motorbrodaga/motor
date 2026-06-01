@@ -54,6 +54,7 @@ model Task {
 
   contexts TaskContext[]
   notes    TaskNote[]
+  focusSelections DailyFocusSelection[]
 
   @@index([status, archivedAt])
   @@index([doDate])
@@ -118,4 +119,20 @@ model TaskNote {
   task Task @relation(fields: [taskId], references: [id], onDelete: Cascade)
 
   @@index([taskId, createdAt])
+}
+
+model DailyFocusSelection {
+  id          String   @id @default(cuid())
+  focusDate   DateTime
+  slot        Int
+  taskId      String
+  confirmedAt DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  task Task @relation(fields: [taskId], references: [id], onDelete: Cascade)
+
+  @@unique([focusDate, slot])
+  @@unique([focusDate, taskId])
+  @@index([taskId])
 }
