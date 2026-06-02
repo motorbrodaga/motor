@@ -831,6 +831,10 @@ textarea {
   line-height: 1.55;
 }
 
+.review-intro__history {
+  justify-self: start;
+}
+
 .review-section__header {
   display: flex;
   align-items: flex-start;
@@ -907,6 +911,133 @@ textarea {
 .review-category__title strong {
   color: var(--accent-strong);
   font-size: 14px;
+}
+
+.history-page {
+  display: grid;
+  gap: 16px;
+}
+
+.history-page__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.history-page__date {
+  display: grid;
+  gap: 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  padding: 10px 12px;
+  text-align: right;
+}
+
+.history-page__date span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.history-page__date strong {
+  color: var(--accent-strong);
+  font-size: 13px;
+}
+
+.history-intro,
+.history-section {
+  display: grid;
+  gap: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  padding: 20px;
+}
+
+.history-intro {
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: flex-start;
+}
+
+.history-intro__icon {
+  display: inline-grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel-soft);
+  color: var(--accent-strong);
+}
+
+.history-intro h3,
+.history-section__header h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.history-intro p,
+.history-section__header p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.history-section__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.history-section__header span {
+  display: inline-grid;
+  min-width: 34px;
+  min-height: 34px;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--panel-soft);
+  color: var(--accent-strong);
+  font-weight: 800;
+}
+
+.history-section__empty {
+  padding: 14px;
+}
+
+.history-section__tasks {
+  display: grid;
+  gap: 10px;
+}
+
+.history-task {
+  display: grid;
+  gap: 8px;
+}
+
+.history-task-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-left: 56px;
+}
+
+.history-task-meta span {
+  display: inline-flex;
+  min-height: 24px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 9px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.history-page__review-link {
+  justify-self: start;
 }
 
 .task-card {

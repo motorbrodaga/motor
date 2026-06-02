@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { TaskCard } from "@/features/tasks/TaskCard";
 import type { TaskView } from "@/features/tasks/task-types";
 import { ReviewTaskActions } from "@/features/review/ReviewTaskActions";
@@ -64,6 +65,9 @@ export default async function ReviewPage() {
           Здесь собраны задачи, которые могли выпасть из внимания. Их можно спокойно
           оставить, назначить на день, отметить важными или открыть подробнее.
         </p>
+        <Link className="secondary-button review-intro__history" href="/history">
+          Посмотреть завершенное
+        </Link>
       </section>
 
       {visibleTaskCount === 0 && review.categories.length === 0 ? (
