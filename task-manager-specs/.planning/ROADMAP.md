@@ -247,9 +247,20 @@ Plans:
 
 Plans:
 
+**Wave 1**
+
 - [ ] 07-01: Build completion history queries and views
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
 - [ ] 07-02: Add completion statistics by count, category, and time
 - [ ] 07-03: Connect history to task completion and manual actual-time entry
+
+**Cross-cutting constraints:**
+
+- D-02: The primary mental model is history as a calm reference view, not a mandatory step in the daily workflow.
+- D-05: Show completed tasks as a day-based list: today, yesterday, and this week.
+- D-06: The list matters in MVP because the user wants a lightweight memory of what actually got done, not only summary numbers.
 
 ### Phase 8: Telegram And Gmail Intake
 
