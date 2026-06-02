@@ -30,6 +30,8 @@ export type TaskView = {
   waitingDirection: string | null;
   responseDueDate: string | null;
   waitingSince: string | null;
+  createdAt?: string;
+  updatedAt?: string;
   completedAt: string | null;
   archivedAt: string | null;
   category: CategoryOption | null;

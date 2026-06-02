@@ -18,7 +18,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 3: Assistant Capture** - Capture tasks through assistant dialogue with confirmation before save. (completed 2026-05-25)
 - [x] **Phase 4: Daily Focus Dashboard** - Show today's work, propose 3 main tasks, and let the user confirm or adjust them. (completed 2026-06-01)
 - [x] **Phase 5: Waiting And People** - Track people-related tasks in both waiting directions. (completed 2026-06-02)
-- [ ] **Phase 6: Soft Reviews** - Bring back forgotten, stale, unscheduled, and waiting tasks through weekly review.
+- [x] **Phase 6: Soft Reviews** - Bring back forgotten, stale, unscheduled, and waiting tasks through weekly review. (completed 2026-06-02)
 - [ ] **Phase 7: Completion History** - Show completed work and simple progress statistics.
 - [ ] **Phase 8: Telegram And Gmail Intake** - Create confirmed tasks from selected Telegram messages and Gmail emails.
 - [ ] **Phase 9: Calendar And Notifications** - Send tasks to iPhone calendar and configure optional push notifications.
@@ -209,19 +209,19 @@ Plans:
 
 **Wave 1**
 
-- [ ] 06-01: Implement soft resurfacing dates for no-due-date tasks
+- [x] 06-01: Implement soft resurfacing dates for no-due-date tasks
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
-- [ ] 06-02: Implement stale task detection and forgotten-task grouping
+- [x] 06-02: Implement stale task detection and forgotten-task grouping
 
 **Wave 3** *(blocked on Wave 2 completion)*
 
-- [ ] 06-03: Build weekly review screen and category accumulation view
+- [x] 06-03: Build weekly review screen and category accumulation view
 
 **Wave 4** *(blocked on Wave 3 completion)*
 
-- [ ] 06-04: Separate weekly review from morning review in navigation and state
+- [x] 06-04: Separate weekly review from morning review in navigation and state
 
 **Cross-cutting constraints:**
 
@@ -331,7 +331,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
 | 3. Assistant Capture | 3/3 | Complete    | 2026-05-27 |
 | 4. Daily Focus Dashboard | 4/4 | Complete    | 2026-06-01 |
 | 5. Waiting And People | 3/3 | Complete    | 2026-06-02 |
-| 6. Soft Reviews | 0/4 | Not started | - |
+| 6. Soft Reviews | 4/4 | Complete    | 2026-06-02 |
 | 7. Completion History | 0/3 | Not started | - |
 | 8. Telegram And Gmail Intake | 0/5 | Not started | - |
 | 9. Calendar And Notifications | 0/5 | Not started | - |

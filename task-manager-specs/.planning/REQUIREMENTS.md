@@ -75,15 +75,15 @@
 
 ### Reviews
 
-- [ ] **REVW-01**: System softly returns tasks without a due date to attention once per week.
-- [ ] **REVW-02**: User can open a weekly review on Mondays.
-- [ ] **REVW-03**: Weekly review shows forgotten tasks.
-- [ ] **REVW-04**: Weekly review shows stale tasks with no changes for 7 days.
-- [ ] **REVW-05**: Weekly review shows tasks without due date.
-- [ ] **REVW-06**: Weekly review shows tasks without do date.
-- [ ] **REVW-07**: Weekly review shows waiting items without movement.
-- [ ] **REVW-08**: Weekly review shows categories with accumulated open tasks.
-- [ ] **REVW-09**: Weekly review is a separate block, not mixed into the morning review.
+- [x] **REVW-01**: System softly returns tasks without a due date to attention once per week.
+- [x] **REVW-02**: User can open a weekly review on Mondays.
+- [x] **REVW-03**: Weekly review shows forgotten tasks.
+- [x] **REVW-04**: Weekly review shows stale tasks with no changes for 7 days.
+- [x] **REVW-05**: Weekly review shows tasks without due date.
+- [x] **REVW-06**: Weekly review shows tasks without do date.
+- [x] **REVW-07**: Weekly review shows waiting items without movement.
+- [x] **REVW-08**: Weekly review shows categories with accumulated open tasks.
+- [x] **REVW-09**: Weekly review is a separate block, not mixed into the morning review.
 
 ### History
 
@@ -224,15 +224,15 @@ Which phases cover which requirements. Updated during roadmap creation.
 | WAIT-03 | Phase 5 | Complete |
 | WAIT-04 | Phase 5 | Complete |
 | WAIT-05 | Phase 5 | Complete |
-| REVW-01 | Phase 6 | Pending |
-| REVW-02 | Phase 6 | Pending |
-| REVW-03 | Phase 6 | Pending |
-| REVW-04 | Phase 6 | Pending |
-| REVW-05 | Phase 6 | Pending |
-| REVW-06 | Phase 6 | Pending |
-| REVW-07 | Phase 6 | Pending |
-| REVW-08 | Phase 6 | Pending |
-| REVW-09 | Phase 6 | Pending |
+| REVW-01 | Phase 6 | Complete |
+| REVW-02 | Phase 6 | Complete |
+| REVW-03 | Phase 6 | Complete |
+| REVW-04 | Phase 6 | Complete |
+| REVW-05 | Phase 6 | Complete |
+| REVW-06 | Phase 6 | Complete |
+| REVW-07 | Phase 6 | Complete |
+| REVW-08 | Phase 6 | Complete |
+| REVW-09 | Phase 6 | Complete |
 | HIST-01 | Phase 7 | Pending |
 | HIST-02 | Phase 7 | Pending |
 | HIST-03 | Phase 7 | Pending |
