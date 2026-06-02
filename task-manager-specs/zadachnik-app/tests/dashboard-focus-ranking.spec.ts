@@ -47,6 +47,8 @@ test("urgency outranks importance and other-for-today follows suggestions", asyn
         title: "Ждет ответа от Олега",
         status: "waiting",
         personLabel: "Олег",
+        waitingDirection: "waiting_for_me",
+        responseDueDate: today,
         doDate: today
       },
       {
@@ -79,7 +81,7 @@ test("urgency outranks importance and other-for-today follows suggestions", asyn
   await expect(focus.getByText("Почему:").first()).toBeVisible();
   await expect(focus.getByText("срочно").first()).toBeVisible();
   await expect(focus.getByText("важное").first()).toBeVisible();
-  await expect(focus.getByText("ждут ответа").first()).toBeVisible();
+  await expect(focus.getByText("ответить сегодня").first()).toBeVisible();
 
   const other = page.getByTestId("other-for-today");
   await expect(other).toBeVisible();

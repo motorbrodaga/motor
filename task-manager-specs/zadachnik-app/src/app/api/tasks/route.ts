@@ -43,6 +43,10 @@ export async function POST(request: NextRequest) {
 
     delete data.title;
 
+    if (typeof data.waitingDirection === "string") {
+      data.waitingSince = new Date();
+    }
+
     const task = await prisma.$transaction(async (tx) => {
       const created = await tx.task.create({
         data: {

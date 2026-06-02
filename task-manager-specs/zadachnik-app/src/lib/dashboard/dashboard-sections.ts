@@ -2,6 +2,7 @@ import type { Prisma } from "@prisma/client";
 import type { TaskView } from "@/features/tasks/task-types";
 import { prisma } from "@/lib/db";
 import { taskInclude } from "@/lib/tasks/task-queries";
+import { WAITING_FOR_ME, WAITING_FOR_THEM } from "@/lib/waiting/waiting-tasks";
 
 export type DashboardCategorySection = {
   id: string;
@@ -73,7 +74,10 @@ export async function getDashboardSections(now = new Date()): Promise<DashboardS
     prisma.task.findMany({
       where: {
         ...openTaskWhere,
-        OR: [{ status: "waiting" }, { personLabel: { not: null } }]
+        personLabel: { not: null },
+        waitingDirection: {
+          in: [WAITING_FOR_ME, WAITING_FOR_THEM]
+        }
       },
       include: taskInclude,
       orderBy: [{ updatedAt: "desc" }]

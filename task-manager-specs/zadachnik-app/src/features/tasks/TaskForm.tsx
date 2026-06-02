@@ -45,6 +45,8 @@ export function TaskForm({ task, categories, contexts, projects }: TaskFormProps
       categoryId: form.get("categoryId"),
       projectId: form.get("projectId"),
       personLabel: form.get("personLabel"),
+      waitingDirection: form.get("waitingDirection"),
+      responseDueDate: form.get("responseDueDate"),
       contextIds
     };
 
@@ -182,6 +184,25 @@ export function TaskForm({ task, categories, contexts, projects }: TaskFormProps
           <span>Человек</span>
           <input name="personLabel" defaultValue={task.personLabel ?? ""} />
         </label>
+
+        <div className="task-form__row">
+          <label className="field">
+            <span>Ожидание</span>
+            <select name="waitingDirection" defaultValue={task.waitingDirection ?? ""}>
+              <option value="">Без ожидания</option>
+              <option value="waiting_for_me">ждут от меня</option>
+              <option value="waiting_for_them">я жду</option>
+            </select>
+          </label>
+          <label className="field">
+            <span>Ответить до</span>
+            <input
+              name="responseDueDate"
+              type="date"
+              defaultValue={toDateInput(task.responseDueDate)}
+            />
+          </label>
+        </div>
       </section>
 
       <label className="field">

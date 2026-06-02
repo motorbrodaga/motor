@@ -2,15 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: executing
-last_updated: "2026-06-01T19:40:01.396Z"
+status: ready_to_plan
+last_updated: 2026-06-02T14:49:55.483Z
 last_activity: 2026-06-01 -- Phase 05 planning complete
 progress:
   total_phases: 10
   completed_phases: 4
   total_plans: 19
-  completed_plans: 16
+  completed_plans: 19
   percent: 40
+stopped_at: Phase 5 complete (3/3) — ready to discuss Phase 6
 ---
 
 # Project State
@@ -20,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-22)
 
 **Core value:** Не дать задачам потеряться.
-**Current focus:** Phase 5 — waiting and people
+**Current focus:** Phase 6 — soft reviews
 
 ## Current Position
 
-Phase: 5
+Phase: 6
 Plan: Not started
-Status: Ready to execute
-Last activity: 2026-06-01 -- Phase 05 planning complete
+Status: Ready to plan
+Last activity: 2026-06-02
 
 Progress: [██████████] 100%
 
@@ -35,7 +36,7 @@ Progress: [██████████] 100%
 
 **Velocity:**
 
-- Total plans completed: 16
+- Total plans completed: 19
 - Average duration: N/A
 - Total execution time: 0.0 hours
 
@@ -54,6 +55,7 @@ Progress: [██████████] 100%
 | 9. Calendar And Notifications | 0/5 | - | - |
 | 10. Offline, Conflicts, And Backups | 0/3 | - | - |
 | 04 | 4 | - | - |
+| 5 | 3 | - | - |
 
 **Recent Trend:**
 

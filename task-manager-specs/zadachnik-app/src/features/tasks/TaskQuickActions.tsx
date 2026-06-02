@@ -23,6 +23,7 @@ export function TaskQuickActions({ taskId, currentImportance }: TaskQuickActions
   const [customDate, setCustomDate] = useState("");
   const [note, setNote] = useState("");
   const [personLabel, setPersonLabel] = useState("");
+  const [waitingDirection, setWaitingDirection] = useState("waiting_for_them");
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
 
@@ -127,10 +128,20 @@ export function TaskQuickActions({ taskId, currentImportance }: TaskQuickActions
             onChange={(event) => setPersonLabel(event.target.value)}
           />
         </label>
+        <label className="field">
+          <span>Ожидание</span>
+          <select
+            value={waitingDirection}
+            onChange={(event) => setWaitingDirection(event.target.value)}
+          >
+            <option value="waiting_for_me">ждут от меня</option>
+            <option value="waiting_for_them">я жду</option>
+          </select>
+        </label>
         <button
           className="secondary-button"
           disabled={busy || !personLabel.trim()}
-          onClick={() => request(`/api/tasks/${taskId}`, { personLabel })}
+          onClick={() => request(`/api/tasks/${taskId}`, { personLabel, waitingDirection })}
         >
           Назначить
         </button>

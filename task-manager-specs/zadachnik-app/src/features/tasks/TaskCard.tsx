@@ -9,8 +9,10 @@ import { TaskQuickActions } from "@/features/tasks/TaskQuickActions";
 import {
   formatDate,
   formatMinutes,
-  statusLabels
+  statusLabels,
+  waitingDirectionLabels
 } from "@/features/tasks/task-formatters";
+import type { WaitingDirection } from "@/lib/tasks/task-validation";
 
 type TaskCardProps = {
   task: TaskView;
@@ -116,6 +118,19 @@ export function TaskCard({ task, compact = false }: TaskCardProps) {
             {task.estimatedMinutes ? <span>План: {formatMinutes(task.estimatedMinutes)}</span> : null}
             {task.actualMinutes ? <span>Факт: {formatMinutes(task.actualMinutes)}</span> : null}
             {task.personLabel ? <span>Человек: {task.personLabel}</span> : null}
+            {task.waitingDirection ? (
+              <span>
+                Ожидание:{" "}
+                {waitingDirectionLabels[task.waitingDirection as WaitingDirection] ??
+                  task.waitingDirection}
+              </span>
+            ) : null}
+            {task.responseDueDate ? (
+              <span>
+                <Clock size={14} aria-hidden="true" /> Ответить до:{" "}
+                {formatDate(task.responseDueDate)}
+              </span>
+            ) : null}
           </div>
         </div>
       </div>

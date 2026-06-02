@@ -52,6 +52,22 @@ export async function PATCH(request: NextRequest, context: RouteContext) {
     const data = validateTaskPatch(payload);
 
     const task = await prisma.$transaction(async (tx) => {
+      if ("waitingDirection" in data) {
+        const current = await tx.task.findUnique({
+          where: { id },
+          select: { waitingDirection: true, waitingSince: true }
+        });
+
+        if (typeof data.waitingDirection === "string") {
+          data.waitingSince =
+            current?.waitingDirection === data.waitingDirection && current.waitingSince
+              ? current.waitingSince
+              : new Date();
+        } else {
+          data.waitingSince = null;
+        }
+      }
+
       if (contextIds) {
         await tx.taskContext.deleteMany({ where: { taskId: id } });
 

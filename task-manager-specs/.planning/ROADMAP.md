@@ -17,7 +17,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: Core Task System** - Create, edit, organize, schedule, and act on tasks with categories, contexts, projects, and notes. (completed 2026-05-25)
 - [x] **Phase 3: Assistant Capture** - Capture tasks through assistant dialogue with confirmation before save. (completed 2026-05-25)
 - [x] **Phase 4: Daily Focus Dashboard** - Show today's work, propose 3 main tasks, and let the user confirm or adjust them. (completed 2026-06-01)
-- [ ] **Phase 5: Waiting And People** - Track people-related tasks in both waiting directions.
+- [x] **Phase 5: Waiting And People** - Track people-related tasks in both waiting directions. (completed 2026-06-02)
 - [ ] **Phase 6: Soft Reviews** - Bring back forgotten, stale, unscheduled, and waiting tasks through weekly review.
 - [ ] **Phase 7: Completion History** - Show completed work and simple progress statistics.
 - [ ] **Phase 8: Telegram And Gmail Intake** - Create confirmed tasks from selected Telegram messages and Gmail emails.
@@ -172,15 +172,15 @@ Plans:
 
 **Wave 1**
 
-- [ ] 05-01: Implement people and waiting-direction model
+- [x] 05-01: Implement people and waiting-direction model
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
-- [ ] 05-02: Build waiting UI and response due-date handling
+- [x] 05-02: Build waiting UI and response due-date handling
 
 **Wave 3** *(blocked on Wave 2 completion)*
 
-- [ ] 05-03: Add one-week follow-up behavior for waiting-on-others tasks
+- [x] 05-03: Add one-week follow-up behavior for waiting-on-others tasks
 
 **Cross-cutting constraints:**
 
@@ -312,7 +312,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
 | 2. Core Task System | 5/5 | Complete    | 2026-05-25 |
 | 3. Assistant Capture | 3/3 | Complete    | 2026-05-27 |
 | 4. Daily Focus Dashboard | 4/4 | Complete    | 2026-06-01 |
-| 5. Waiting And People | 0/3 | Not started | - |
+| 5. Waiting And People | 3/3 | Complete    | 2026-06-02 |
 | 6. Soft Reviews | 0/4 | Not started | - |
 | 7. Completion History | 0/3 | Not started | - |
 | 8. Telegram And Gmail Intake | 0/5 | Not started | - |

@@ -83,7 +83,7 @@ export async function DashboardHome() {
         />
         <DashboardTaskSection
           title="Ожидания"
-          description="Задачи со статусом ожидания или привязкой к человеку."
+          description="Задачи с человеком и понятным направлением ожидания."
           tasks={sections.waiting}
           empty="Ожиданий пока нет."
         />

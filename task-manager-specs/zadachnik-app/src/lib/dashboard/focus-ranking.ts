@@ -1,4 +1,5 @@
 import type { TaskView } from "@/features/tasks/task-types";
+import { WAITING_FOR_ME } from "@/lib/waiting/waiting-tasks";
 
 export type DailyFocusSuggestion = {
   task: TaskView;
@@ -35,6 +36,10 @@ function isBefore(value: string | null, date: Date) {
   return Boolean(candidate && candidate < date);
 }
 
+function isWaitingForMeWithResponseDate(task: TaskView) {
+  return task.waitingDirection === WAITING_FOR_ME && Boolean(task.personLabel && task.responseDueDate);
+}
+
 function compactReasons(task: TaskView, todayStart: Date, tomorrowStart: Date) {
   const reasons: string[] = [];
 
@@ -50,8 +55,12 @@ function compactReasons(task: TaskView, todayStart: Date, tomorrowStart: Date) {
     reasons.push("просрочено");
   }
 
-  if (task.status === "waiting" || task.personLabel) {
-    reasons.push("ждут ответа");
+  if (isWaitingForMeWithResponseDate(task)) {
+    if (isInRange(task.responseDueDate, todayStart, tomorrowStart)) {
+      reasons.push("ответить сегодня");
+    } else if (isBefore(task.responseDueDate, todayStart)) {
+      reasons.push("ждут ответа");
+    }
   }
 
   if (task.importance === "important") {
@@ -76,8 +85,12 @@ function scoreTask(task: TaskView, todayStart: Date, tomorrowStart: Date) {
     score += 500;
   }
 
-  if (task.status === "waiting" || task.personLabel) {
-    score += 260;
+  if (isWaitingForMeWithResponseDate(task)) {
+    if (isBefore(task.responseDueDate, todayStart)) {
+      score += 260;
+    } else if (isInRange(task.responseDueDate, todayStart, tomorrowStart)) {
+      score += 240;
+    }
   }
 
   if (isInRange(task.dueDate, todayStart, tomorrowStart)) {

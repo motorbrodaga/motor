@@ -1,5 +1,8 @@
 import { isTaskImportance, isTaskStatus } from "@/lib/tasks/task-options";
 
+export const waitingDirections = ["waiting_for_me", "waiting_for_them"] as const;
+export type WaitingDirection = (typeof waitingDirections)[number];
+
 export type TaskInput = {
   title?: unknown;
   description?: unknown;
@@ -14,6 +17,8 @@ export type TaskInput = {
   contextIds?: unknown;
   projectId?: unknown;
   personLabel?: unknown;
+  waitingDirection?: unknown;
+  responseDueDate?: unknown;
 };
 
 export function cleanText(value: unknown) {
@@ -71,6 +76,20 @@ export function optionalBoolean(value: unknown) {
 
 export function optionalId(value: unknown) {
   return cleanText(value);
+}
+
+export function optionalWaitingDirection(value: unknown) {
+  const direction = cleanText(value);
+
+  if (!direction) {
+    return null;
+  }
+
+  if (!waitingDirections.includes(direction as WaitingDirection)) {
+    throw new Error("Некорректное направление ожидания.");
+  }
+
+  return direction;
 }
 
 export function optionalIdList(value: unknown) {
@@ -141,6 +160,14 @@ export function validateTaskPatch(input: TaskInput) {
 
   if ("personLabel" in input) {
     data.personLabel = cleanText(input.personLabel);
+  }
+
+  if ("waitingDirection" in input) {
+    data.waitingDirection = optionalWaitingDirection(input.waitingDirection);
+  }
+
+  if ("responseDueDate" in input) {
+    data.responseDueDate = optionalDate(input.responseDueDate);
   }
 
   return data;

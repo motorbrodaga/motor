@@ -728,6 +728,53 @@ textarea {
   gap: 12px;
 }
 
+.waiting-page {
+  display: grid;
+  gap: 16px;
+}
+
+.waiting-section {
+  display: grid;
+  gap: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  padding: 20px;
+}
+
+.waiting-section__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.waiting-section__header h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.waiting-section__header p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.waiting-section__header span {
+  display: inline-grid;
+  min-width: 34px;
+  min-height: 34px;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--panel-soft);
+  color: var(--accent-strong);
+  font-weight: 800;
+}
+
+.waiting-section__empty {
+  padding: 14px;
+}
+
 .task-card {
   --category-color: var(--line);
   display: grid;

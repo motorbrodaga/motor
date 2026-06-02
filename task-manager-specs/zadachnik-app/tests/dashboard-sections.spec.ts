@@ -49,6 +49,13 @@ test("dashboard sections show open work and hide completed or archived tasks", a
         title: "Жду ответ от Ивана",
         status: "waiting",
         personLabel: "Иван",
+        waitingDirection: "waiting_for_them",
+        categoryId: home.id
+      },
+      {
+        title: "Просто задача с человеком",
+        status: "todo",
+        personLabel: "Мария",
         categoryId: home.id
       },
       {
@@ -90,6 +97,7 @@ test("dashboard sections show open work and hide completed or archived tasks", a
 
   await expect(page.getByRole("link", { name: "Завершенная сегодня" })).toHaveCount(0);
   await expect(page.getByRole("link", { name: "Скрытая просрочка" })).toHaveCount(0);
+  await expect(page.getByRole("heading", { name: "Ожидания" }).locator("..").getByRole("link", { name: "Просто задача с человеком" })).toHaveCount(0);
 });
 
 test("dashboard sections show calm empty states", async ({ page }) => {

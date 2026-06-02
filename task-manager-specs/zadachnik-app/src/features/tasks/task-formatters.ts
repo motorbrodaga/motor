@@ -1,4 +1,5 @@
 import type { TaskImportance, TaskStatus } from "@/lib/tasks/task-options";
+import type { WaitingDirection } from "@/lib/tasks/task-validation";
 
 export const statusLabels: Record<TaskStatus, string> = {
   inbox: "Входящие",
@@ -11,6 +12,11 @@ export const statusLabels: Record<TaskStatus, string> = {
 export const importanceLabels: Record<TaskImportance, string> = {
   normal: "Обычная",
   important: "Важная"
+};
+
+export const waitingDirectionLabels: Record<WaitingDirection, string> = {
+  waiting_for_me: "ждут от меня",
+  waiting_for_them: "я жду"
 };
 
 export function formatDate(value?: string | Date | null) {

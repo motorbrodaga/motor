@@ -41,6 +41,9 @@ model Task {
   estimatedMinutes Int?
   actualMinutes    Int?
   personLabel      String?
+  waitingDirection String?
+  responseDueDate  DateTime?
+  waitingSince     DateTime?
   completedAt      DateTime?
   archivedAt       DateTime?
   createdAt        DateTime      @default(now())
@@ -59,6 +62,8 @@ model Task {
   @@index([status, archivedAt])
   @@index([doDate])
   @@index([dueDate])
+  @@index([waitingDirection])
+  @@index([responseDueDate])
   @@index([categoryId])
   @@index([projectId])
 }

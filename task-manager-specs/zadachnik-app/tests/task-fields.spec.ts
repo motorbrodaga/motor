@@ -18,15 +18,19 @@ test.afterAll(async () => {
 
 test("user can edit scheduling, importance, urgency, time, and description", async ({ page }) => {
   const task = await prisma.task.create({ data: { title: "Настроить поля" } });
+  const taskForm = page.locator("form.task-form");
 
   await page.goto(`/tasks/${task.id}`);
-  await page.getByLabel("День выполнения").fill("2026-05-26");
-  await page.getByLabel("Крайний срок").fill("2026-05-30");
-  await page.getByLabel("Важность").selectOption("important");
-  await page.getByLabel("Срочно").check();
-  await page.getByLabel("План, мин").fill("45");
-  await page.getByLabel("Факт, мин").fill("20");
-  await page.getByLabel("Описание").fill("Описание отдельно от заметок.");
+  await taskForm.getByLabel("День выполнения").fill("2026-05-26");
+  await taskForm.getByLabel("Крайний срок").fill("2026-05-30");
+  await taskForm.getByLabel("Важность").selectOption("important");
+  await taskForm.getByLabel("Срочно").check();
+  await taskForm.getByLabel("План, мин").fill("45");
+  await taskForm.getByLabel("Факт, мин").fill("20");
+  await taskForm.locator('input[name="personLabel"]').fill("Иван");
+  await taskForm.locator('select[name="waitingDirection"]').selectOption("waiting_for_me");
+  await taskForm.getByLabel("Ответить до").fill("2026-05-28");
+  await taskForm.getByLabel("Описание").fill("Описание отдельно от заметок.");
   await page.getByRole("button", { name: "Сохранить задачу" }).click();
   await expect(page.getByText("Сохранено")).toBeVisible();
 
@@ -37,4 +41,8 @@ test("user can edit scheduling, importance, urgency, time, and description", asy
   expect(saved.actualMinutes).toBe(20);
   expect(saved.dueDate?.toISOString().slice(0, 10)).toBe("2026-05-30");
   expect(saved.doDate?.toISOString().slice(0, 10)).toBe("2026-05-26");
+  expect(saved.personLabel).toBe("Иван");
+  expect(saved.waitingDirection).toBe("waiting_for_me");
+  expect(saved.responseDueDate?.toISOString().slice(0, 10)).toBe("2026-05-28");
+  expect(saved.waitingSince).toBeTruthy();
 });

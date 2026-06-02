@@ -67,11 +67,11 @@
 
 ### Waiting
 
-- [ ] **WAIT-01**: User can associate a task with a person.
-- [ ] **WAIT-02**: User can mark waiting direction as "they are waiting for me" or "I am waiting for them".
-- [ ] **WAIT-03**: User can set a response due date for tasks where someone is waiting for the user.
-- [ ] **WAIT-04**: For "I am waiting for them" tasks without a date, system reminds the user to check status after one week.
-- [ ] **WAIT-05**: Waiting state is derived from person plus waiting direction, without a separate "person is waiting" tag.
+- [x] **WAIT-01**: User can associate a task with a person.
+- [x] **WAIT-02**: User can mark waiting direction as "they are waiting for me" or "I am waiting for them".
+- [x] **WAIT-03**: User can set a response due date for tasks where someone is waiting for the user.
+- [x] **WAIT-04**: For "I am waiting for them" tasks without a date, system reminds the user to check status after one week.
+- [x] **WAIT-05**: Waiting state is derived from person plus waiting direction, without a separate "person is waiting" tag.
 
 ### Reviews
 
@@ -219,11 +219,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DASH-09 | Phase 4 | Complete |
 | DASH-10 | Phase 4 | Complete |
 | DASH-11 | Phase 4 | Complete |
-| WAIT-01 | Phase 5 | Pending |
-| WAIT-02 | Phase 5 | Pending |
-| WAIT-03 | Phase 5 | Pending |
-| WAIT-04 | Phase 5 | Pending |
-| WAIT-05 | Phase 5 | Pending |
+| WAIT-01 | Phase 5 | Complete |
+| WAIT-02 | Phase 5 | Complete |
+| WAIT-03 | Phase 5 | Complete |
+| WAIT-04 | Phase 5 | Complete |
+| WAIT-05 | Phase 5 | Complete |
 | REVW-01 | Phase 6 | Pending |
 | REVW-02 | Phase 6 | Pending |
 | REVW-03 | Phase 6 | Pending |
