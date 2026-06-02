@@ -207,10 +207,28 @@ Plans:
 
 Plans:
 
+**Wave 1**
+
 - [ ] 06-01: Implement soft resurfacing dates for no-due-date tasks
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
 - [ ] 06-02: Implement stale task detection and forgotten-task grouping
+
+**Wave 3** *(blocked on Wave 2 completion)*
+
 - [ ] 06-03: Build weekly review screen and category accumulation view
+
+**Wave 4** *(blocked on Wave 3 completion)*
+
 - [ ] 06-04: Separate weekly review from morning review in navigation and state
+
+**Cross-cutting constraints:**
+
+- D-01: The weekly review should feel like a soft list, not a checklist audit or performance report.
+- D-04: The tone should be very soft and pressure-free.
+- D-13: The weekly review must be visibly separate from the morning Dashboard.
+- D-10: The review must include forgotten, stale, no-due-date, no-do-date, waiting-without-movement, and category accumulation groups.
 
 ### Phase 7: Completion History
 
