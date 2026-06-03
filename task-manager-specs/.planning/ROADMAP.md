@@ -19,7 +19,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 4: Daily Focus Dashboard** - Show today's work, propose 3 main tasks, and let the user confirm or adjust them. (completed 2026-06-01)
 - [x] **Phase 5: Waiting And People** - Track people-related tasks in both waiting directions. (completed 2026-06-02)
 - [x] **Phase 6: Soft Reviews** - Bring back forgotten, stale, unscheduled, and waiting tasks through weekly review. (completed 2026-06-02)
-- [ ] **Phase 7: Completion History** - Show completed work and simple progress statistics.
+- [x] **Phase 7: Completion History** - Show completed work and simple progress statistics. (completed 2026-06-03)
 - [ ] **Phase 8: Telegram And Gmail Intake** - Create confirmed tasks from selected Telegram messages and Gmail emails.
 - [ ] **Phase 9: Calendar And Notifications** - Send tasks to iPhone calendar and configure optional push notifications.
 - [ ] **Phase 10: Offline, Conflicts, And Backups** - Make the MVP resilient with offline support, simple conflict handling, and backups.
@@ -249,12 +249,12 @@ Plans:
 
 **Wave 1**
 
-- [ ] 07-01: Build completion history queries and views
+- [x] 07-01: Build completion history queries and views
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
-- [ ] 07-02: Add completion statistics by count, category, and time
-- [ ] 07-03: Connect history to task completion and manual actual-time entry
+- [x] 07-02: Add completion statistics by count, category, and time
+- [x] 07-03: Connect history to task completion and manual actual-time entry
 
 **Cross-cutting constraints:**
 
@@ -343,7 +343,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
 | 4. Daily Focus Dashboard | 4/4 | Complete    | 2026-06-01 |
 | 5. Waiting And People | 3/3 | Complete    | 2026-06-02 |
 | 6. Soft Reviews | 4/4 | Complete    | 2026-06-02 |
-| 7. Completion History | 0/3 | Not started | - |
+| 7. Completion History | 3/3 | Complete    | 2026-06-03 |
 | 8. Telegram And Gmail Intake | 0/5 | Not started | - |
 | 9. Calendar And Notifications | 0/5 | Not started | - |
 | 10. Offline, Conflicts, And Backups | 0/3 | Not started | - |

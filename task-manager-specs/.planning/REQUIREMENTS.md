@@ -87,11 +87,11 @@
 
 ### History
 
-- [ ] **HIST-01**: User can view completed tasks for today.
-- [ ] **HIST-02**: User can view completed tasks for the week.
-- [ ] **HIST-03**: Completion history shows task count.
-- [ ] **HIST-04**: Completion history shows distribution by category.
-- [ ] **HIST-05**: Completion history shows manually entered actual time spent.
+- [x] **HIST-01**: User can view completed tasks for today.
+- [x] **HIST-02**: User can view completed tasks for the week.
+- [x] **HIST-03**: Completion history shows task count.
+- [x] **HIST-04**: Completion history shows distribution by category.
+- [x] **HIST-05**: Completion history shows manually entered actual time spent.
 
 ### Integrations
 
@@ -233,11 +233,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | REVW-07 | Phase 6 | Complete |
 | REVW-08 | Phase 6 | Complete |
 | REVW-09 | Phase 6 | Complete |
-| HIST-01 | Phase 7 | Pending |
-| HIST-02 | Phase 7 | Pending |
-| HIST-03 | Phase 7 | Pending |
-| HIST-04 | Phase 7 | Pending |
-| HIST-05 | Phase 7 | Pending |
+| HIST-01 | Phase 7 | Complete |
+| HIST-02 | Phase 7 | Complete |
+| HIST-03 | Phase 7 | Complete |
+| HIST-04 | Phase 7 | Complete |
+| HIST-05 | Phase 7 | Complete |
 | INTG-01 | Phase 8 | Pending |
 | INTG-02 | Phase 8 | Pending |
 | INTG-03 | Phase 8 | Pending |
