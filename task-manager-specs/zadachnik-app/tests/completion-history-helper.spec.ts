@@ -1,6 +1,7 @@
 import { expect, test } from "@playwright/test";
 import type { TaskView } from "@/features/tasks/task-types";
 import {
+  buildCompletionStats,
   buildHistorySections,
   startOfHistoryWeek
 } from "@/lib/history/completion-history";
@@ -57,3 +58,25 @@ test("completion history groups today yesterday and this week", () => {
   expect(sections.find((section) => section.id === "this-week")?.tasks.map(({ id }) => id)).toEqual(["week"]);
 });
 
+test("completion stats count categories and actual time", () => {
+  const stats = buildCompletionStats([
+    task({
+      id: "work",
+      actualMinutes: 25,
+      category: { id: "work", name: "Работа", color: "#2f6fbb" }
+    }),
+    task({
+      id: "work-2",
+      actualMinutes: 10,
+      category: { id: "work", name: "Работа", color: "#2f6fbb" }
+    }),
+    task({ id: "none" })
+  ]);
+
+  expect(stats.completedCount).toBe(3);
+  expect(stats.totalActualMinutes).toBe(35);
+  expect(stats.categories).toEqual([
+    { id: "work", name: "Работа", color: "#2f6fbb", count: 2, actualMinutes: 35 },
+    { id: "uncategorized", name: "без категории", color: "#8a8f98", count: 1, actualMinutes: 0 }
+  ]);
+});

@@ -49,19 +49,29 @@ export async function PATCH(request: NextRequest, context: RouteContext) {
     const contextIds = "contextIds" in payload
       ? optionalIdList(payload.contextIds)
       : undefined;
-    const data = validateTaskPatch(payload);
+      const data = validateTaskPatch(payload);
 
-    const task = await prisma.$transaction(async (tx) => {
-      if ("waitingDirection" in data) {
-        const current = await tx.task.findUnique({
-          where: { id },
-          select: { waitingDirection: true, waitingSince: true }
-        });
+      const task = await prisma.$transaction(async (tx) => {
+        if ("status" in data || "waitingDirection" in data) {
+          const current = await tx.task.findUnique({
+            where: { id },
+            select: {
+              completedAt: true,
+              waitingDirection: true,
+              waitingSince: true
+            }
+          });
 
-        if (typeof data.waitingDirection === "string") {
-          data.waitingSince =
-            current?.waitingDirection === data.waitingDirection && current.waitingSince
-              ? current.waitingSince
+          if (data.status === "done") {
+            data.completedAt = current?.completedAt ?? new Date();
+          } else if ("status" in data) {
+            data.completedAt = null;
+          }
+
+          if (typeof data.waitingDirection === "string") {
+            data.waitingSince =
+              current?.waitingDirection === data.waitingDirection && current.waitingSince
+                ? current.waitingSince
               : new Date();
         } else {
           data.waitingSince = null;

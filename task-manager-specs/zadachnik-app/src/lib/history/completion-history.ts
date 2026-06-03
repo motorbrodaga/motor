@@ -17,9 +17,24 @@ export type CompletionHistory = {
   generatedAt: Date;
   weekStart: Date;
   sections: HistorySection[];
+  stats: CompletionStats;
 };
 
 type HistoryTaskRecord = Prisma.TaskGetPayload<{ include: typeof taskInclude }>;
+
+export type CompletionCategoryStat = {
+  id: string;
+  name: string;
+  color: string;
+  count: number;
+  actualMinutes: number;
+};
+
+export type CompletionStats = {
+  completedCount: number;
+  totalActualMinutes: number;
+  categories: CompletionCategoryStat[];
+};
 
 function startOfLocalDay(value: Date) {
   return new Date(value.getFullYear(), value.getMonth(), value.getDate());
@@ -96,6 +111,39 @@ export function buildHistorySections(tasks: TaskView[], now = new Date()): Histo
   ];
 }
 
+export function buildCompletionStats(tasks: TaskView[]): CompletionStats {
+  const categories = new Map<string, CompletionCategoryStat>();
+  let totalActualMinutes = 0;
+
+  for (const task of tasks) {
+    const actualMinutes = task.actualMinutes ?? 0;
+    totalActualMinutes += actualMinutes;
+
+    const category = task.category ?? {
+      id: "uncategorized",
+      name: "без категории",
+      color: "#8a8f98"
+    };
+    const current = categories.get(category.id) ?? {
+      id: category.id,
+      name: category.name,
+      color: category.color,
+      count: 0,
+      actualMinutes: 0
+    };
+
+    current.count += 1;
+    current.actualMinutes += actualMinutes;
+    categories.set(category.id, current);
+  }
+
+  return {
+    completedCount: tasks.length,
+    totalActualMinutes,
+    categories: Array.from(categories.values()).sort((left, right) => right.count - left.count)
+  };
+}
+
 export async function getCompletionHistory(now = new Date()): Promise<CompletionHistory> {
   const weekStart = startOfHistoryWeek(now);
   const tasks = await prisma.task.findMany({
@@ -110,10 +158,12 @@ export async function getCompletionHistory(now = new Date()): Promise<Completion
       completedAt: "desc"
     }
   });
+  const taskViews = tasks.map(toTaskView);
 
   return {
     generatedAt: now,
     weekStart,
-    sections: buildHistorySections(tasks.map(toTaskView), now)
+    sections: buildHistorySections(taskViews, now),
+    stats: buildCompletionStats(taskViews)
   };
 }
