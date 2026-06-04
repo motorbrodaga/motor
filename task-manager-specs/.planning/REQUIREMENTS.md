@@ -109,17 +109,17 @@
 
 ### Calendar
 
-- [ ] **CALN-01**: User can add a task with date/time to the iPhone calendar.
-- [ ] **CALN-02**: If a task has no date/time, user is asked for date/time before adding it to calendar.
-- [ ] **CALN-03**: Calendar event title contains the task title.
-- [ ] **CALN-04**: Calendar event description can include task description or notes.
-- [ ] **CALN-05**: When a task changes in Задачник, the linked iPhone calendar event updates.
+- [x] **CALN-01**: User can add a task with date/time to the iPhone calendar.
+- [x] **CALN-02**: If a task has no date/time, user is asked for date/time before adding it to calendar.
+- [x] **CALN-03**: Calendar event title contains the task title.
+- [x] **CALN-04**: Calendar event description can include task description or notes.
+- [x] **CALN-05**: When a task changes in Задачник, the linked iPhone calendar event updates.
 
 ### Notifications
 
-- [ ] **NOTF-01**: User can enable or disable push notifications for the morning review.
-- [ ] **NOTF-02**: User can enable or disable push notifications for other task reminders.
-- [ ] **NOTF-03**: MVP favors soft reminders through reviews, highlighting, and grouping over hard exact-time notification flows.
+- [x] **NOTF-01**: User can enable or disable push notifications for the morning review.
+- [x] **NOTF-02**: User can enable or disable push notifications for other task reminders.
+- [x] **NOTF-03**: MVP favors soft reminders through reviews, highlighting, and grouping over hard exact-time notification flows.
 
 ### Mobile UI
 
@@ -249,14 +249,14 @@ Which phases cover which requirements. Updated during roadmap creation.
 | INTG-09 | Phase 8 | Complete |
 | INTG-10 | Phase 8 | Complete |
 | INTG-11 | Phase 8 | Complete |
-| CALN-01 | Phase 9 | Pending |
-| CALN-02 | Phase 9 | Pending |
-| CALN-03 | Phase 9 | Pending |
-| CALN-04 | Phase 9 | Pending |
-| CALN-05 | Phase 9 | Pending |
-| NOTF-01 | Phase 9 | Pending |
-| NOTF-02 | Phase 9 | Pending |
-| NOTF-03 | Phase 9 | Pending |
+| CALN-01 | Phase 9 | Complete |
+| CALN-02 | Phase 9 | Complete |
+| CALN-03 | Phase 9 | Complete |
+| CALN-04 | Phase 9 | Complete |
+| CALN-05 | Phase 9 | Complete |
+| NOTF-01 | Phase 9 | Complete |
+| NOTF-02 | Phase 9 | Complete |
+| NOTF-03 | Phase 9 | Complete |
 | ACCS-04 | Phase 10 | Pending |
 | ACCS-05 | Phase 10 | Pending |
 | ACCS-06 | Phase 10 | Pending |

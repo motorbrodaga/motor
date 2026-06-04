@@ -21,7 +21,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 6: Soft Reviews** - Bring back forgotten, stale, unscheduled, and waiting tasks through weekly review. (completed 2026-06-02)
 - [x] **Phase 7: Completion History** - Show completed work and simple progress statistics. (completed 2026-06-03)
 - [x] **Phase 8: Telegram And Gmail Intake** - Create confirmed tasks from selected Telegram messages and Gmail emails. (completed 2026-06-04)
-- [ ] **Phase 9: Calendar And Notifications** - Send tasks to iPhone calendar and configure optional push notifications.
+- [x] **Phase 9: Calendar And Notifications** - Send tasks to iPhone calendar and configure optional push notifications. (completed 2026-06-05)
 - [ ] **Phase 10: Offline, Conflicts, And Backups** - Make the MVP resilient with offline support, simple conflict handling, and backups.
 
 ## Phase Details
@@ -314,17 +314,17 @@ Plans:
 
 **Wave 1**
 
-- [ ] 09-01: Choose and implement iPhone calendar integration strategy
-- [ ] 09-04: Add notification preferences for morning review and other reminders
+- [x] 09-01: Choose and implement iPhone calendar integration strategy
+- [x] 09-04: Add notification preferences for morning review and other reminders
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
-- [ ] 09-02: Create calendar events from tasks with date/time
-- [ ] 09-05: Keep reminder behavior soft in UI and notification copy
+- [x] 09-02: Create calendar events from tasks with date/time
+- [x] 09-05: Keep reminder behavior soft in UI and notification copy
 
 **Wave 3** *(blocked on Wave 2 completion)*
 
-- [ ] 09-03: Update linked calendar events after task changes
+- [x] 09-03: Update linked calendar events after task changes
 
 ### Phase 10: Offline, Conflicts, And Backups
 
@@ -361,5 +361,5 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
 | 6. Soft Reviews | 4/4 | Complete    | 2026-06-02 |
 | 7. Completion History | 3/3 | Complete    | 2026-06-03 |
 | 8. Telegram And Gmail Intake | 5/5 | Complete    | 2026-06-04 |
-| 9. Calendar And Notifications | 0/5 | Not started | - |
+| 9. Calendar And Notifications | 5/5 | Complete   | 2026-06-05 |
 | 10. Offline, Conflicts, And Backups | 0/3 | Not started | - |
