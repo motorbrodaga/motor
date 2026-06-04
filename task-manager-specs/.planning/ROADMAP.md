@@ -20,7 +20,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 5: Waiting And People** - Track people-related tasks in both waiting directions. (completed 2026-06-02)
 - [x] **Phase 6: Soft Reviews** - Bring back forgotten, stale, unscheduled, and waiting tasks through weekly review. (completed 2026-06-02)
 - [x] **Phase 7: Completion History** - Show completed work and simple progress statistics. (completed 2026-06-03)
-- [ ] **Phase 8: Telegram And Gmail Intake** - Create confirmed tasks from selected Telegram messages and Gmail emails.
+- [x] **Phase 8: Telegram And Gmail Intake** - Create confirmed tasks from selected Telegram messages and Gmail emails. (completed 2026-06-04)
 - [ ] **Phase 9: Calendar And Notifications** - Send tasks to iPhone calendar and configure optional push notifications.
 - [ ] **Phase 10: Offline, Conflicts, And Backups** - Make the MVP resilient with offline support, simple conflict handling, and backups.
 
@@ -282,17 +282,17 @@ Plans:
 
 **Wave 1**
 
-- [ ] 08-04: Store source labels without source links
-- [ ] 08-05: Add privacy and explicit-request safeguards
+- [x] 08-04: Store source labels without source links
+- [x] 08-05: Add privacy and explicit-request safeguards
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
-- [ ] 08-01: Implement Telegram Motorcodex_bot selection flow
-- [ ] 08-02: Implement Gmail search and 20-result selection flow
+- [x] 08-01: Implement Telegram Motorcodex_bot selection flow
+- [x] 08-02: Implement Gmail search and 20-result selection flow
 
 **Wave 3** *(blocked on Wave 2 completion)*
 
-- [ ] 08-03: Convert selected Telegram/Gmail source into confirmed task cards
+- [x] 08-03: Convert selected Telegram/Gmail source into confirmed task cards
 
 ### Phase 9: Calendar And Notifications
 
@@ -352,6 +352,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
 | 5. Waiting And People | 3/3 | Complete    | 2026-06-02 |
 | 6. Soft Reviews | 4/4 | Complete    | 2026-06-02 |
 | 7. Completion History | 3/3 | Complete    | 2026-06-03 |
-| 8. Telegram And Gmail Intake | 0/5 | Not started | - |
+| 8. Telegram And Gmail Intake | 5/5 | Complete    | 2026-06-04 |
 | 9. Calendar And Notifications | 0/5 | Not started | - |
 | 10. Offline, Conflicts, And Backups | 0/3 | Not started | - |

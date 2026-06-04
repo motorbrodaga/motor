@@ -7,6 +7,7 @@ export default function MorePage() {
       <h2>Еще</h2>
       <div className="settings-list">
         <Link href="/history">История</Link>
+        <Link href="/more/intake">Импорт из Telegram и Gmail</Link>
         <Link href="/more/access">Приватная ссылка</Link>
         <Link href="/more/categories">Категории</Link>
         <Link href="/more/contexts">Контексты</Link>

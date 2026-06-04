@@ -95,17 +95,17 @@
 
 ### Integrations
 
-- [ ] **INTG-01**: User can explicitly ask the system to create a task from Telegram.
-- [ ] **INTG-02**: Telegram task import uses the `https://t.me/Motorcodex_bot` chat as the MVP source.
-- [ ] **INTG-03**: Telegram import shows 20 latest messages for user selection.
-- [ ] **INTG-04**: Assistant summarizes the selected Telegram message into task content instead of copying it verbatim.
-- [ ] **INTG-05**: User can explicitly ask the system to create a task from Gmail.
-- [ ] **INTG-06**: Gmail import can search for a relevant email based on the user's request.
-- [ ] **INTG-07**: If multiple Gmail messages match, system shows up to 20 options for user selection.
-- [ ] **INTG-08**: Assistant prepares a task card for confirmation from the selected Gmail email.
-- [ ] **INTG-09**: Imported tasks store a text source label such as "from Gmail" or "from Telegram Motorcodex_bot".
-- [ ] **INTG-10**: Imported tasks do not need to store links to original messages or emails.
-- [ ] **INTG-11**: System never automatically scans all Telegram/Gmail content to create tasks without explicit user request.
+- [x] **INTG-01**: User can explicitly ask the system to create a task from Telegram.
+- [x] **INTG-02**: Telegram task import uses the `https://t.me/Motorcodex_bot` chat as the MVP source.
+- [x] **INTG-03**: Telegram import shows 20 latest messages for user selection.
+- [x] **INTG-04**: Assistant summarizes the selected Telegram message into task content instead of copying it verbatim.
+- [x] **INTG-05**: User can explicitly ask the system to create a task from Gmail.
+- [x] **INTG-06**: Gmail import can search for a relevant email based on the user's request.
+- [x] **INTG-07**: If multiple Gmail messages match, system shows up to 20 options for user selection.
+- [x] **INTG-08**: Assistant prepares a task card for confirmation from the selected Gmail email.
+- [x] **INTG-09**: Imported tasks store a text source label such as "from Gmail" or "from Telegram Motorcodex_bot".
+- [x] **INTG-10**: Imported tasks do not need to store links to original messages or emails.
+- [x] **INTG-11**: System never automatically scans all Telegram/Gmail content to create tasks without explicit user request.
 
 ### Calendar
 
@@ -238,17 +238,17 @@ Which phases cover which requirements. Updated during roadmap creation.
 | HIST-03 | Phase 7 | Complete |
 | HIST-04 | Phase 7 | Complete |
 | HIST-05 | Phase 7 | Complete |
-| INTG-01 | Phase 8 | Pending |
-| INTG-02 | Phase 8 | Pending |
-| INTG-03 | Phase 8 | Pending |
-| INTG-04 | Phase 8 | Pending |
-| INTG-05 | Phase 8 | Pending |
-| INTG-06 | Phase 8 | Pending |
-| INTG-07 | Phase 8 | Pending |
-| INTG-08 | Phase 8 | Pending |
-| INTG-09 | Phase 8 | Pending |
-| INTG-10 | Phase 8 | Pending |
-| INTG-11 | Phase 8 | Pending |
+| INTG-01 | Phase 8 | Complete |
+| INTG-02 | Phase 8 | Complete |
+| INTG-03 | Phase 8 | Complete |
+| INTG-04 | Phase 8 | Complete |
+| INTG-05 | Phase 8 | Complete |
+| INTG-06 | Phase 8 | Complete |
+| INTG-07 | Phase 8 | Complete |
+| INTG-08 | Phase 8 | Complete |
+| INTG-09 | Phase 8 | Complete |
+| INTG-10 | Phase 8 | Complete |
+| INTG-11 | Phase 8 | Complete |
 | CALN-01 | Phase 9 | Pending |
 | CALN-02 | Phase 9 | Pending |
 | CALN-03 | Phase 9 | Pending |

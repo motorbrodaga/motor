@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: executing
-last_updated: "2026-06-04T09:01:54.995Z"
-last_activity: 2026-06-04 -- Phase 08 planning complete
+status: planning
+last_updated: "2026-06-04T20:45:55.925Z"
+last_activity: 2026-06-04
 progress:
   total_phases: 10
-  completed_phases: 7
+  completed_phases: 8
   total_plans: 31
-  completed_plans: 26
-  percent: 70
+  completed_plans: 31
+  percent: 80
 ---
 
 # Project State
@@ -20,22 +20,22 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-22)
 
 **Core value:** Не дать задачам потеряться.
-**Current focus:** Phase 8 — telegram and gmail intake
+**Current focus:** Phase 9 — calendar and notifications
 
 ## Current Position
 
-Phase: 8
+Phase: 9
 Plan: Not started
-Status: Ready to execute
-Last activity: 2026-06-04 -- Phase 08 planning complete
+Status: Ready to plan
+Last activity: 2026-06-04
 
-Progress: [██████████] 100%
+Progress: [████████--] 80%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 26
+- Total plans completed: 31
 - Average duration: N/A
 - Total execution time: 0.0 hours
 
@@ -50,13 +50,14 @@ Progress: [██████████] 100%
 | 5. Waiting And People | 0/3 | - | - |
 | 6. Soft Reviews | 0/4 | - | - |
 | 7. Completion History | 0/3 | - | - |
-| 8. Telegram And Gmail Intake | 0/5 | - | - |
+| 8. Telegram And Gmail Intake | 5/5 | - | - |
 | 9. Calendar And Notifications | 0/5 | - | - |
 | 10. Offline, Conflicts, And Backups | 0/3 | - | - |
 | 04 | 4 | - | - |
 | 5 | 3 | - | - |
 | 6 | 4 | - | - |
 | 7 | 3 | - | - |
+| 08 | 5 | - | - |
 
 **Recent Trend:**
 

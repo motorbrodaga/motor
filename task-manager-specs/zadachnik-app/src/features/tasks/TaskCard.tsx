@@ -117,6 +117,7 @@ export function TaskCard({ task, compact = false }: TaskCardProps) {
             ) : null}
             {task.estimatedMinutes ? <span>План: {formatMinutes(task.estimatedMinutes)}</span> : null}
             {task.actualMinutes ? <span>Факт: {formatMinutes(task.actualMinutes)}</span> : null}
+            {task.sourceLabel ? <span>Источник: {task.sourceLabel}</span> : null}
             {task.personLabel ? <span>Человек: {task.personLabel}</span> : null}
             {task.waitingDirection ? (
               <span>

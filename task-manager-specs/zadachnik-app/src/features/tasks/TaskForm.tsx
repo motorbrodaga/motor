@@ -47,6 +47,7 @@ export function TaskForm({ task, categories, contexts, projects }: TaskFormProps
       personLabel: form.get("personLabel"),
       waitingDirection: form.get("waitingDirection"),
       responseDueDate: form.get("responseDueDate"),
+      sourceLabel: form.get("sourceLabel"),
       contextIds
     };
 
@@ -208,6 +209,11 @@ export function TaskForm({ task, categories, contexts, projects }: TaskFormProps
       <label className="field">
         <span>Описание</span>
         <textarea name="description" defaultValue={task.description ?? ""} rows={5} />
+      </label>
+
+      <label className="field">
+        <span>Источник</span>
+        <input name="sourceLabel" defaultValue={task.sourceLabel ?? ""} />
       </label>
 
       <div className="task-form__actions">

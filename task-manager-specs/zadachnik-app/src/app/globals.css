@@ -215,6 +215,122 @@ textarea {
   font-weight: 650;
 }
 
+.intake-page {
+  display: grid;
+  gap: 16px;
+}
+
+.intake-intro,
+.intake-panel,
+.intake-draft {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  padding: 18px;
+}
+
+.intake-intro {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.intake-intro svg {
+  margin-top: 2px;
+  color: var(--accent-strong);
+}
+
+.intake-intro h3,
+.intake-panel h3,
+.intake-draft h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+
+.intake-intro p,
+.intake-panel p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.intake-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f7f8fa;
+  padding: 4px;
+}
+
+.intake-tabs__button {
+  display: inline-flex;
+  min-width: 0;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  padding: 8px;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.intake-tabs__button.is-active {
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+}
+
+.intake-panel__header,
+.intake-search {
+  display: grid;
+  gap: 12px;
+}
+
+.intake-results {
+  display: grid;
+  gap: 10px;
+}
+
+.intake-choice {
+  display: grid;
+  width: 100%;
+  min-height: 72px;
+  gap: 5px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--ink);
+  padding: 12px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.intake-choice span,
+.intake-choice small {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.intake-choice strong {
+  overflow-wrap: anywhere;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.intake-draft__source {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
 .access-panel {
   display: grid;
   gap: 16px;
@@ -1534,6 +1650,16 @@ textarea {
 
   .page-section h2 {
     font-size: 32px;
+  }
+
+  .intake-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .intake-intro,
+  .intake-panel,
+  .intake-draft {
+    padding: 16px;
   }
 
   .dashboard-home__top {

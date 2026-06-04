@@ -13,6 +13,7 @@ export type TaskInput = {
   doDate?: unknown;
   estimatedMinutes?: unknown;
   actualMinutes?: unknown;
+  sourceLabel?: unknown;
   categoryId?: unknown;
   contextIds?: unknown;
   projectId?: unknown;
@@ -76,6 +77,24 @@ export function optionalBoolean(value: unknown) {
 
 export function optionalId(value: unknown) {
   return cleanText(value);
+}
+
+export function optionalSourceLabel(value: unknown) {
+  const text = cleanText(value);
+
+  if (!text) {
+    return null;
+  }
+
+  if (text.length > 80) {
+    throw new Error("Метка источника должна быть короче 80 символов.");
+  }
+
+  if (/https?:\/\//i.test(text)) {
+    throw new Error("В MVP храним только текстовую метку источника.");
+  }
+
+  return text;
 }
 
 export function optionalWaitingDirection(value: unknown) {
@@ -148,6 +167,10 @@ export function validateTaskPatch(input: TaskInput) {
 
   if ("actualMinutes" in input) {
     data.actualMinutes = optionalMinutes(input.actualMinutes);
+  }
+
+  if ("sourceLabel" in input) {
+    data.sourceLabel = optionalSourceLabel(input.sourceLabel);
   }
 
   if ("categoryId" in input) {

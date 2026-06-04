@@ -26,6 +26,7 @@ export type TaskView = {
   doDate: string | null;
   estimatedMinutes: number | null;
   actualMinutes: number | null;
+  sourceLabel?: string | null;
   personLabel: string | null;
   waitingDirection: string | null;
   responseDueDate: string | null;
