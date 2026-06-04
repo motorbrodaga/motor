@@ -280,11 +280,19 @@ Plans:
 
 Plans:
 
-- [ ] 08-01: Implement Telegram Motorcodex_bot selection flow
-- [ ] 08-02: Implement Gmail search and 20-result selection flow
-- [ ] 08-03: Convert selected Telegram/Gmail source into confirmed task cards
+**Wave 1**
+
 - [ ] 08-04: Store source labels without source links
 - [ ] 08-05: Add privacy and explicit-request safeguards
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
+- [ ] 08-01: Implement Telegram Motorcodex_bot selection flow
+- [ ] 08-02: Implement Gmail search and 20-result selection flow
+
+**Wave 3** *(blocked on Wave 2 completion)*
+
+- [ ] 08-03: Convert selected Telegram/Gmail source into confirmed task cards
 
 ### Phase 9: Calendar And Notifications
 
