@@ -31,6 +31,8 @@ export type TaskView = {
   waitingDirection: string | null;
   responseDueDate: string | null;
   waitingSince: string | null;
+  reminderAt?: string | null;
+  reminderSentAt?: string | null;
   createdAt?: string;
   updatedAt?: string;
   completedAt: string | null;
@@ -43,4 +45,14 @@ export type TaskView = {
     body: string;
     createdAt: string;
   }>;
+  calendarLink?: {
+    id: string;
+    allDay: boolean;
+    startsAt: string;
+    endsAt: string | null;
+    includeDescription: boolean;
+    includeNotes: boolean;
+    sequence: number;
+    lastSyncedAt: string;
+  } | null;
 };

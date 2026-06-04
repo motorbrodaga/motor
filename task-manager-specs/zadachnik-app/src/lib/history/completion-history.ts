@@ -64,6 +64,8 @@ function toTaskView(task: HistoryTaskRecord): TaskView {
     doDate: toIso(task.doDate),
     responseDueDate: toIso(task.responseDueDate),
     waitingSince: toIso(task.waitingSince),
+    reminderAt: toIso(task.reminderAt),
+    reminderSentAt: toIso(task.reminderSentAt),
     completedAt: toIso(task.completedAt),
     archivedAt: toIso(task.archivedAt),
     createdAt: toIso(task.createdAt) ?? undefined,

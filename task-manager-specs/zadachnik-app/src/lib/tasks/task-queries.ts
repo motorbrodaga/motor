@@ -17,6 +17,7 @@ export const taskInclude = {
 
 export const taskDetailInclude = {
   ...taskInclude,
+  calendarLink: true,
   notes: {
     orderBy: {
       createdAt: "desc" as const

@@ -45,6 +45,8 @@ model Task {
   waitingDirection String?
   responseDueDate  DateTime?
   waitingSince     DateTime?
+  reminderAt       DateTime?
+  reminderSentAt   DateTime?
   completedAt      DateTime?
   archivedAt       DateTime?
   createdAt        DateTime      @default(now())
@@ -59,10 +61,12 @@ model Task {
   contexts TaskContext[]
   notes    TaskNote[]
   focusSelections DailyFocusSelection[]
+  calendarLink TaskCalendarLink?
 
   @@index([status, archivedAt])
   @@index([doDate])
   @@index([dueDate])
+  @@index([reminderAt])
   @@index([waitingDirection])
   @@index([responseDueDate])
   @@index([categoryId])
@@ -125,6 +129,53 @@ model TaskNote {
   task Task @relation(fields: [taskId], references: [id], onDelete: Cascade)
 
   @@index([taskId, createdAt])
+}
+
+model CalendarFeedToken {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  label     String
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model TaskCalendarLink {
+  id                 String   @id @default(cuid())
+  taskId             String   @unique
+  eventUid           String   @unique
+  allDay             Boolean  @default(true)
+  startsAt           DateTime
+  endsAt             DateTime?
+  includeDescription Boolean  @default(true)
+  includeNotes       Boolean  @default(false)
+  sequence           Int      @default(0)
+  lastSyncedAt       DateTime @default(now())
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  task Task @relation(fields: [taskId], references: [id], onDelete: Cascade)
+
+  @@index([startsAt])
+}
+
+model PushSubscription {
+  id        String    @id @default(cuid())
+  endpoint  String    @unique
+  p256dh    String
+  auth      String
+  label     String?
+  enabled   Boolean   @default(true)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  lastSeenAt DateTime @default(now())
+}
+
+model NotificationPreference {
+  key       String   @id
+  enabled   Boolean  @default(false)
+  time      String?
+  updatedAt DateTime @updatedAt
 }
 
 model DailyFocusSelection {

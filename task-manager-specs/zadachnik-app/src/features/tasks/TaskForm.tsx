@@ -8,7 +8,7 @@ import type {
   ProjectOption,
   TaskView
 } from "@/features/tasks/task-types";
-import { toDateInput } from "@/features/tasks/task-formatters";
+import { toDateInput, toDateTimeInput } from "@/features/tasks/task-formatters";
 
 type TaskFormProps = {
   task: TaskView;
@@ -47,6 +47,7 @@ export function TaskForm({ task, categories, contexts, projects }: TaskFormProps
       personLabel: form.get("personLabel"),
       waitingDirection: form.get("waitingDirection"),
       responseDueDate: form.get("responseDueDate"),
+      reminderAt: form.get("reminderAt"),
       sourceLabel: form.get("sourceLabel"),
       contextIds
     };
@@ -137,6 +138,18 @@ export function TaskForm({ task, categories, contexts, projects }: TaskFormProps
             />
           </label>
         </div>
+      </section>
+
+      <section className="task-form__group">
+        <h3>Напоминание</h3>
+        <label className="field">
+          <span>Пуш-напоминание</span>
+          <input
+            name="reminderAt"
+            type="datetime-local"
+            defaultValue={toDateTimeInput(task.reminderAt)}
+          />
+        </label>
       </section>
 
       <section className="task-form__group">

@@ -20,6 +20,7 @@ export type TaskInput = {
   personLabel?: unknown;
   waitingDirection?: unknown;
   responseDueDate?: unknown;
+  reminderAt?: unknown;
 };
 
 export function cleanText(value: unknown) {
@@ -52,6 +53,22 @@ export function optionalDate(value: unknown) {
 
   if (Number.isNaN(date.getTime())) {
     throw new Error("Некорректная дата.");
+  }
+
+  return date;
+}
+
+export function optionalDateTime(value: unknown) {
+  const text = cleanText(value);
+
+  if (!text) {
+    return null;
+  }
+
+  const date = new Date(text);
+
+  if (Number.isNaN(date.getTime())) {
+    throw new Error("Некорректная дата и время.");
   }
 
   return date;
@@ -191,6 +208,11 @@ export function validateTaskPatch(input: TaskInput) {
 
   if ("responseDueDate" in input) {
     data.responseDueDate = optionalDate(input.responseDueDate);
+  }
+
+  if ("reminderAt" in input) {
+    data.reminderAt = optionalDateTime(input.reminderAt);
+    data.reminderSentAt = null;
   }
 
   return data;

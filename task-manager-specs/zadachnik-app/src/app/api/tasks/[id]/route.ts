@@ -7,6 +7,7 @@ import {
   type TaskInput
 } from "@/lib/tasks/task-validation";
 import { taskDetailInclude } from "@/lib/tasks/task-queries";
+import { shouldBumpCalendarSequence } from "@/lib/calendar/task-calendar";
 
 type RouteContext = {
   params: Promise<{ id: string }>;
@@ -50,6 +51,7 @@ export async function PATCH(request: NextRequest, context: RouteContext) {
       ? optionalIdList(payload.contextIds)
       : undefined;
       const data = validateTaskPatch(payload);
+      const bumpCalendarSequence = shouldBumpCalendarSequence(data);
 
       const task = await prisma.$transaction(async (tx) => {
         if ("status" in data || "waitingDirection" in data) {
@@ -86,6 +88,16 @@ export async function PATCH(request: NextRequest, context: RouteContext) {
             data: Array.from(new Set(contextIds)).map((contextId) => ({ taskId: id, contextId }))
           });
         }
+      }
+
+      if (bumpCalendarSequence) {
+        await tx.taskCalendarLink.updateMany({
+          where: { taskId: id },
+          data: {
+            sequence: { increment: 1 },
+            lastSyncedAt: new Date()
+          }
+        });
       }
 
       return tx.task.update({

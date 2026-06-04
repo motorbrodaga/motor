@@ -16,18 +16,20 @@
   },
   "dependencies": {
     "@prisma/client": "^6.9.0",
+    "@types/web-push": "^3.6.4",
     "effect": "^3.14.21",
     "lucide-react": "^0.511.0",
     "next": "^15.3.2",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "web-push": "^3.6.7"
   },
   "devDependencies": {
     "@playwright/test": "^1.52.0",
-    "autoprefixer": "^10.4.20",
     "@types/node": "^22.15.21",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "autoprefixer": "^10.4.20",
     "eslint": "^9.27.0",
     "eslint-config-next": "^15.3.2",
     "postcss": "^8.5.3",

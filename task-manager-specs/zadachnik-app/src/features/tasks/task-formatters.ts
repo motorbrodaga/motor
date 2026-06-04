@@ -51,6 +51,21 @@ export function toDateInput(value?: string | Date | null) {
   return date.toISOString().slice(0, 10);
 }
 
+export function toDateTimeInput(value?: string | Date | null) {
+  if (!value) {
+    return "";
+  }
+
+  const date = typeof value === "string" ? new Date(value) : value;
+
+  if (Number.isNaN(date.getTime())) {
+    return "";
+  }
+
+  const local = new Date(date.getTime() - date.getTimezoneOffset() * 60_000);
+  return local.toISOString().slice(0, 16);
+}
+
 export function formatMinutes(value?: number | null) {
   if (value === null || value === undefined) {
     return "";

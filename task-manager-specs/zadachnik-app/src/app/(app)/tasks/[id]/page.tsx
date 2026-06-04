@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { TaskCalendarPanel } from "@/features/tasks/TaskCalendarPanel";
 import { TaskForm } from "@/features/tasks/TaskForm";
 import { TaskNotesFeed } from "@/features/tasks/TaskNotesFeed";
 import { prisma } from "@/lib/db";
@@ -38,6 +39,7 @@ export default async function TaskPage({ params }: TaskPageProps) {
         contexts={JSON.parse(JSON.stringify(options.contexts))}
         projects={JSON.parse(JSON.stringify(options.projects))}
       />
+      <TaskCalendarPanel task={JSON.parse(JSON.stringify(task))} />
       <TaskNotesFeed taskId={task.id} notes={JSON.parse(JSON.stringify(task.notes))} />
     </section>
   );
