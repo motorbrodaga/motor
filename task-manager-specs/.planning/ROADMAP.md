@@ -312,11 +312,19 @@ Plans:
 
 Plans:
 
+**Wave 1**
+
 - [ ] 09-01: Choose and implement iPhone calendar integration strategy
-- [ ] 09-02: Create calendar events from tasks with date/time
-- [ ] 09-03: Update linked calendar events after task changes
 - [ ] 09-04: Add notification preferences for morning review and other reminders
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
+- [ ] 09-02: Create calendar events from tasks with date/time
 - [ ] 09-05: Keep reminder behavior soft in UI and notification copy
+
+**Wave 3** *(blocked on Wave 2 completion)*
+
+- [ ] 09-03: Update linked calendar events after task changes
 
 ### Phase 10: Offline, Conflicts, And Backups
 
