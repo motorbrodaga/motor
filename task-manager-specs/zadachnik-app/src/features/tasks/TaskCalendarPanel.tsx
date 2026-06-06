@@ -33,6 +33,7 @@ export function TaskCalendarPanel({ task }: TaskCalendarPanelProps) {
   const [includeNotes, setIncludeNotes] = useState(task.calendarLink?.includeNotes ?? false);
   const [feedUrl, setFeedUrl] = useState("");
   const [status, setStatus] = useState("");
+  const [showManualCopy, setShowManualCopy] = useState(false);
   const [busy, setBusy] = useState(false);
 
   const hasLink = Boolean(task.calendarLink);
@@ -90,8 +91,20 @@ export function TaskCalendarPanel({ task }: TaskCalendarPanelProps) {
   }
 
   async function copyFeedUrl() {
-    await navigator.clipboard?.writeText(feedUrl);
-    setStatus("Ссылка скопирована.");
+    if (!navigator.clipboard?.writeText) {
+      setShowManualCopy(true);
+      setStatus("Не удалось скопировать автоматически. Ссылка ниже, ее можно выделить вручную.");
+      return;
+    }
+
+    try {
+      await navigator.clipboard.writeText(feedUrl);
+      setShowManualCopy(false);
+      setStatus("Ссылка скопирована.");
+    } catch {
+      setShowManualCopy(true);
+      setStatus("Не удалось скопировать автоматически. Ссылка ниже, ее можно выделить вручную.");
+    }
   }
 
   async function regenerateFeed() {
@@ -170,6 +183,13 @@ export function TaskCalendarPanel({ task }: TaskCalendarPanelProps) {
           Новая ссылка
         </button>
       </div>
+
+      {showManualCopy ? (
+        <label className="field calendar-panel__manual-copy">
+          <span>Ссылка подписки</span>
+          <input readOnly value={feedUrl} onFocus={(event) => event.currentTarget.select()} />
+        </label>
+      ) : null}
 
       {hasLink ? (
         <p className="calendar-panel__meta">
