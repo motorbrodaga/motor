@@ -8,15 +8,15 @@ source:
   - 09-04-SUMMARY.md
   - 09-05-SUMMARY.md
 started: 2026-06-06T16:59:27+03:00
-updated: 2026-06-06T17:31:00+03:00
+updated: 2026-06-06T17:40:00+03:00
 ---
 
 ## Current Test
 
-number: 2
-name: Copy and regenerate calendar subscription link
+number: 3
+name: Linked calendar event updates after task edit
 expected: |
-  In the same calendar panel, "Скопировать подписку" copies the feed link, or shows a manual "Ссылка подписки" field if browser copy permission is denied. "Новая ссылка" shows that the old link was disabled and a new subscription link is available.
+  After a task has been added to the calendar, changing the task title or description and saving keeps the calendar link active; the detail page still shows the calendar status and says iPhone controls subscription refresh timing.
 awaiting: user response
 
 ## Tests
@@ -27,7 +27,7 @@ result: pass
 
 ### 2. Copy and regenerate calendar subscription link
 expected: In the same calendar panel, "Скопировать подписку" copies the feed link, or shows a manual "Ссылка подписки" field if browser copy permission is denied. "Новая ссылка" shows that the old link was disabled and a new subscription link is available.
-result: [pending]
+result: pass
 
 ### 3. Linked calendar event updates after task edit
 expected: After a task has been added to the calendar, changing the task title or description and saving keeps the calendar link active; the detail page still shows the calendar status and says iPhone controls subscription refresh timing.
@@ -48,9 +48,9 @@ result: [pending]
 ## Summary
 
 total: 6
-passed: 1
+passed: 2
 issues: 0
-pending: 5
+pending: 4
 skipped: 0
 blocked: 0
 
