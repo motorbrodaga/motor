@@ -296,7 +296,7 @@ Plans:
 
 ### Phase 9: Calendar And Notifications
 
-**Goal**: Connect time-bound tasks to iPhone calendar and keep notification behavior optional and soft.
+**Goal**: As a personal task manager user, I want to connect dated tasks to my iPhone calendar and control optional reminders, so that time-bound tasks return to my attention without feeling overwhelming.
 **Mode:** mvp
 **Depends on**: Phase 2
 **Requirements**: [CALN-01, CALN-02, CALN-03, CALN-04, CALN-05, NOTF-01, NOTF-02, NOTF-03]
