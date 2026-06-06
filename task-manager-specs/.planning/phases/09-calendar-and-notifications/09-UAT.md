@@ -8,15 +8,15 @@ source:
   - 09-04-SUMMARY.md
   - 09-05-SUMMARY.md
 started: 2026-06-06T16:59:27+03:00
-updated: 2026-06-06T17:40:00+03:00
+updated: 2026-06-06T17:47:00+03:00
 ---
 
 ## Current Test
 
-number: 3
-name: Linked calendar event updates after task edit
+number: 4
+name: Notification settings are reachable and optional
 expected: |
-  After a task has been added to the calendar, changing the task title or description and saving keeps the calendar link active; the detail page still shows the calendar status and says iPhone controls subscription refresh timing.
+  Open "Ещё" -> "Уведомления". The page shows separate controls for "Утренний обзор" and "Напоминания задач", and both can be enabled or disabled independently.
 awaiting: user response
 
 ## Tests
@@ -31,7 +31,7 @@ result: pass
 
 ### 3. Linked calendar event updates after task edit
 expected: After a task has been added to the calendar, changing the task title or description and saving keeps the calendar link active; the detail page still shows the calendar status and says iPhone controls subscription refresh timing.
-result: [pending]
+result: pass
 
 ### 4. Notification settings are reachable and optional
 expected: Open "Ещё" -> "Уведомления". The page shows separate controls for "Утренний обзор" and "Напоминания задач", and both can be enabled or disabled independently.
@@ -48,9 +48,9 @@ result: [pending]
 ## Summary
 
 total: 6
-passed: 2
+passed: 3
 issues: 0
-pending: 4
+pending: 3
 skipped: 0
 blocked: 0
 
