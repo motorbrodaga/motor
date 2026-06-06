@@ -8,15 +8,15 @@ source:
   - 09-04-SUMMARY.md
   - 09-05-SUMMARY.md
 started: 2026-06-06T16:59:27+03:00
-updated: 2026-06-06T17:47:00+03:00
+updated: 2026-06-06T17:52:00+03:00
 ---
 
 ## Current Test
 
-number: 4
-name: Notification settings are reachable and optional
+number: 5
+name: Task reminder field is available on task detail
 expected: |
-  Open "Ещё" -> "Уведомления". The page shows separate controls for "Утренний обзор" and "Напоминания задач", and both can be enabled or disabled independently.
+  Open a task detail page. The task form has a "Напоминание" section with a "Пуш-напоминание" date/time field. Saving the task keeps the page usable and shows the normal saved state.
 awaiting: user response
 
 ## Tests
@@ -35,7 +35,7 @@ result: pass
 
 ### 4. Notification settings are reachable and optional
 expected: Open "Ещё" -> "Уведомления". The page shows separate controls for "Утренний обзор" and "Напоминания задач", and both can be enabled or disabled independently.
-result: [pending]
+result: pass
 
 ### 5. Task reminder field is available on task detail
 expected: Open a task detail page. The task form has a "Напоминание" section with a "Пуш-напоминание" date/time field. Saving the task keeps the page usable and shows the normal saved state.
@@ -48,9 +48,9 @@ result: [pending]
 ## Summary
 
 total: 6
-passed: 3
+passed: 4
 issues: 0
-pending: 3
+pending: 2
 skipped: 0
 blocked: 0
 
