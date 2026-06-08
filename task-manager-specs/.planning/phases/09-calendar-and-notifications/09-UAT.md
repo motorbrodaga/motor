@@ -1,5 +1,5 @@
 ---
-status: testing
+status: complete
 phase: 09-calendar-and-notifications
 source:
   - 09-01-SUMMARY.md
@@ -8,16 +8,12 @@ source:
   - 09-04-SUMMARY.md
   - 09-05-SUMMARY.md
 started: 2026-06-06T16:59:27+03:00
-updated: 2026-06-08T00:00:00+03:00
+updated: 2026-06-08T00:05:00+03:00
 ---
 
 ## Current Test
 
-number: 6
-name: Cold Start Smoke Test
-expected: |
-  Start the app from a clean server process. The dashboard opens, task detail pages compile, the notifications page opens, and the calendar feed route returns live calendar data after a task is linked.
-awaiting: user response
+[testing complete]
 
 ## Tests
 
@@ -43,14 +39,14 @@ result: pass
 
 ### 6. Cold Start Smoke Test
 expected: Start the app from a clean server process. The dashboard opens, task detail pages compile, the notifications page opens, and the calendar feed route returns live calendar data after a task is linked.
-result: [pending]
+result: pass
 
 ## Summary
 
 total: 6
-passed: 5
+passed: 6
 issues: 0
-pending: 1
+pending: 0
 skipped: 0
 blocked: 0
 
