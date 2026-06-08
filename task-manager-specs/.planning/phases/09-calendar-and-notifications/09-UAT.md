@@ -8,15 +8,15 @@ source:
   - 09-04-SUMMARY.md
   - 09-05-SUMMARY.md
 started: 2026-06-06T16:59:27+03:00
-updated: 2026-06-06T17:52:00+03:00
+updated: 2026-06-08T00:00:00+03:00
 ---
 
 ## Current Test
 
-number: 5
-name: Task reminder field is available on task detail
+number: 6
+name: Cold Start Smoke Test
 expected: |
-  Open a task detail page. The task form has a "Напоминание" section with a "Пуш-напоминание" date/time field. Saving the task keeps the page usable and shows the normal saved state.
+  Start the app from a clean server process. The dashboard opens, task detail pages compile, the notifications page opens, and the calendar feed route returns live calendar data after a task is linked.
 awaiting: user response
 
 ## Tests
@@ -39,7 +39,7 @@ result: pass
 
 ### 5. Task reminder field is available on task detail
 expected: Open a task detail page. The task form has a "Напоминание" section with a "Пуш-напоминание" date/time field. Saving the task keeps the page usable and shows the normal saved state.
-result: [pending]
+result: pass
 
 ### 6. Cold Start Smoke Test
 expected: Start the app from a clean server process. The dashboard opens, task detail pages compile, the notifications page opens, and the calendar feed route returns live calendar data after a task is linked.
@@ -48,9 +48,9 @@ result: [pending]
 ## Summary
 
 total: 6
-passed: 4
+passed: 5
 issues: 0
-pending: 2
+pending: 1
 skipped: 0
 blocked: 0
 
