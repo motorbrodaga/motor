@@ -342,8 +342,16 @@ Plans:
 
 Plans:
 
+**Wave 1**
+
 - [ ] 10-01: Implement offline task storage and sync queue
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
 - [ ] 10-02: Implement latest-change-wins conflict resolution
+
+**Wave 3** *(blocked on Wave 2 completion)*
+
 - [ ] 10-03: Implement automatic backup and recovery path
 
 ## Progress
