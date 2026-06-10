@@ -4,6 +4,10 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { CalendarDays, Check, Clock, Flame, Star, Trash2 } from "lucide-react";
+import {
+  archiveTask as archiveOfflineAwareTask,
+  patchTask as patchOfflineAwareTask
+} from "@/features/offline/task-client";
 import type { TaskView } from "@/features/tasks/task-types";
 import { TaskQuickActions } from "@/features/tasks/TaskQuickActions";
 import {
@@ -20,24 +24,11 @@ type TaskCardProps = {
 };
 
 async function patchTask(taskId: string, body: Record<string, unknown>) {
-  const response = await fetch(`/api/tasks/${taskId}`, {
-    method: "PATCH",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify(body)
-  });
-
-  if (!response.ok) {
-    const payload = (await response.json().catch(() => ({}))) as { error?: string };
-    throw new Error(payload.error ?? "Не удалось сохранить задачу.");
-  }
+  await patchOfflineAwareTask(taskId, body);
 }
 
 async function archiveTask(taskId: string) {
-  const response = await fetch(`/api/tasks/${taskId}`, { method: "DELETE" });
-
-  if (!response.ok) {
-    throw new Error("Не удалось скрыть задачу.");
-  }
+  await archiveOfflineAwareTask(taskId);
 }
 
 export function TaskCard({ task, compact = false }: TaskCardProps) {

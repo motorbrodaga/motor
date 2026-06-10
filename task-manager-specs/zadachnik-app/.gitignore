@@ -8,3 +8,4 @@ dev.db-journal
 test-results
 playwright-report
 tsconfig.tsbuildinfo
+data/backups/

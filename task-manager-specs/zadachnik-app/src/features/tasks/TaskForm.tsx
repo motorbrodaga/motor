@@ -8,6 +8,7 @@ import type {
   ProjectOption,
   TaskView
 } from "@/features/tasks/task-types";
+import { patchTask as patchOfflineAwareTask } from "@/features/offline/task-client";
 import { toDateInput, toDateTimeInput } from "@/features/tasks/task-formatters";
 
 type TaskFormProps = {
@@ -52,22 +53,15 @@ export function TaskForm({ task, categories, contexts, projects }: TaskFormProps
       contextIds
     };
 
-    const response = await fetch(`/api/tasks/${task.id}`, {
-      method: "PATCH",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(body)
-    });
-
-    setBusy(false);
-
-    if (!response.ok) {
-      const payload = (await response.json().catch(() => ({}))) as { error?: string };
-      setError(payload.error ?? "Проверьте поля и попробуйте еще раз.");
-      return;
+    try {
+      await patchOfflineAwareTask(task.id, body);
+      setSaved(true);
+      router.refresh();
+    } catch (error) {
+      setError(error instanceof Error ? error.message : "Проверьте поля и попробуйте еще раз.");
+    } finally {
+      setBusy(false);
     }
-
-    setSaved(true);
-    router.refresh();
   }
 
   return (

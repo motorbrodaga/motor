@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { createTaskNote } from "@/features/offline/task-client";
 import { formatDate } from "@/features/tasks/task-formatters";
 
 type Note = {
@@ -19,6 +20,7 @@ export function TaskNotesFeed({ taskId, notes }: TaskNotesFeedProps) {
   const router = useRouter();
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
+  const [localNotes, setLocalNotes] = useState(notes);
 
   async function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -26,22 +28,29 @@ export function TaskNotesFeed({ taskId, notes }: TaskNotesFeedProps) {
     setError("");
 
     const form = new FormData(event.currentTarget);
-    const response = await fetch(`/api/tasks/${taskId}/notes`, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ body: form.get("body") })
-    });
+    const body = String(form.get("body") ?? "").trim();
 
-    setBusy(false);
+    try {
+      const result = await createTaskNote(taskId, body);
 
-    if (!response.ok) {
-      const payload = (await response.json().catch(() => ({}))) as { error?: string };
-      setError(payload.error ?? "Не удалось добавить заметку.");
-      return;
+      if (result.queued) {
+        setLocalNotes((current) => [
+          {
+            id: `local-note-${Date.now()}`,
+            body,
+            createdAt: new Date().toISOString()
+          },
+          ...current
+        ]);
+      }
+
+      event.currentTarget.reset();
+      router.refresh();
+    } catch (caught) {
+      setError(caught instanceof Error ? caught.message : "Не удалось добавить заметку.");
+    } finally {
+      setBusy(false);
     }
-
-    event.currentTarget.reset();
-    router.refresh();
   }
 
   return (
@@ -58,14 +67,14 @@ export function TaskNotesFeed({ taskId, notes }: TaskNotesFeedProps) {
         {error ? <p className="form-error">{error}</p> : null}
       </form>
 
-      {notes.length === 0 ? (
+      {localNotes.length === 0 ? (
         <div className="empty-state">
           <h3>Заметок пока нет</h3>
           <p>Добавляйте сюда уточнения, решения и ход работы.</p>
         </div>
       ) : (
         <div className="notes-list">
-          {notes.map((note) => (
+          {localNotes.map((note) => (
             <article className="note-item" key={note.id}>
               <time dateTime={note.createdAt}>{formatDate(note.createdAt)}</time>
               <p>{note.body}</p>

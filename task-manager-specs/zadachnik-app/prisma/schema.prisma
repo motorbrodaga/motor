@@ -193,3 +193,28 @@ model DailyFocusSelection {
   @@unique([focusDate, taskId])
   @@index([taskId])
 }
+
+model AppliedMutation {
+  clientMutationId String   @id
+  operation        String
+  entityType       String?
+  entityId         String?
+  localEntityId    String?
+  clientUpdatedAt  DateTime
+  serverAppliedAt  DateTime @default(now())
+  resultJson       String?
+}
+
+model BackupRun {
+  id          String    @id @default(cuid())
+  status      String
+  fileName    String?
+  filePath    String?
+  entityCountsJson String?
+  error       String?
+  createdAt   DateTime  @default(now())
+  completedAt DateTime?
+
+  @@index([createdAt])
+  @@index([status])
+}

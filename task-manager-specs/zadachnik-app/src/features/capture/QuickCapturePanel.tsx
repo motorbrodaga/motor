@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { createTask as createOfflineAwareTask } from "@/features/offline/task-client";
 import type { AssistantCaptureInterpretation } from "@/lib/assistant-capture/interpret-task-capture";
 
 type QuickCapturePanelProps = {
@@ -65,16 +66,7 @@ export function QuickCapturePanel({ onClose }: QuickCapturePanelProps) {
   }, []);
 
   async function createTask(body: Record<string, unknown>) {
-    const response = await fetch("/api/tasks", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(body)
-    });
-
-    if (!response.ok) {
-      const payload = (await response.json().catch(() => ({}))) as { error?: string };
-      throw new Error(payload.error ?? "Проверьте поля и попробуйте еще раз.");
-    }
+    return createOfflineAwareTask(body);
   }
 
   async function submitManual(event: React.FormEvent<HTMLFormElement>) {
@@ -84,10 +76,16 @@ export function QuickCapturePanel({ onClose }: QuickCapturePanelProps) {
     setMessage("");
 
     try {
-      await createTask({ title });
+      const result = await createTask({ title });
       setTitle("");
-      setMessage("Задача добавлена во входящие.");
-      router.refresh();
+      setMessage(
+        result.queued
+          ? "Задача сохранена на телефоне. Ждет синхронизации."
+          : "Задача добавлена во входящие."
+      );
+      if (!result.queued) {
+        router.refresh();
+      }
     } catch (submitError) {
       setError(submitError instanceof Error ? submitError.message : "Не удалось сохранить.");
     } finally {
@@ -139,7 +137,7 @@ export function QuickCapturePanel({ onClose }: QuickCapturePanelProps) {
     setMessage("");
 
     try {
-      await createTask({
+      const result = await createTask({
         title: draft.title,
         doDate: draft.doDate,
         dueDate: draft.dueDate,
@@ -150,8 +148,14 @@ export function QuickCapturePanel({ onClose }: QuickCapturePanelProps) {
       setInterpretation(null);
       setDraft(null);
       setEditingDraft(false);
-      setMessage("Задача сохранена после подтверждения.");
-      router.refresh();
+      setMessage(
+        result.queued
+          ? "Задача сохранена на телефоне. Ждет синхронизации."
+          : "Задача сохранена после подтверждения."
+      );
+      if (!result.queued) {
+        router.refresh();
+      }
     } catch (submitError) {
       setError(submitError instanceof Error ? submitError.message : "Не удалось сохранить.");
     } finally {

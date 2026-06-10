@@ -9,6 +9,7 @@ export default function MorePage() {
         <Link href="/history">История</Link>
         <Link href="/more/intake">Импорт из Telegram и Gmail</Link>
         <Link href="/more/notifications">Уведомления</Link>
+        <Link href="/more/backups">Бэкапы</Link>
         <Link href="/more/access">Приватная ссылка</Link>
         <Link href="/more/categories">Категории</Link>
         <Link href="/more/contexts">Контексты</Link>

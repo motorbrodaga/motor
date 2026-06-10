@@ -2,6 +2,10 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import {
+  createTaskNote,
+  patchTask as patchOfflineAwareTask
+} from "@/features/offline/task-client";
 
 type TaskQuickActionsProps = {
   taskId: string;
@@ -31,21 +35,19 @@ export function TaskQuickActions({ taskId, currentImportance }: TaskQuickActions
     setBusy(true);
     setError("");
 
-    const response = await fetch(path, {
-      method,
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(body)
-    });
+    try {
+      if (method === "POST" && path.endsWith("/notes")) {
+        await createTaskNote(taskId, String(body.body ?? ""));
+      } else {
+        await patchOfflineAwareTask(taskId, body);
+      }
 
-    setBusy(false);
-
-    if (!response.ok) {
-      const payload = (await response.json().catch(() => ({}))) as { error?: string };
-      setError(payload.error ?? "Не удалось сохранить.");
-      return;
+      router.refresh();
+    } catch (error) {
+      setError(error instanceof Error ? error.message : "Не удалось сохранить.");
+    } finally {
+      setBusy(false);
     }
-
-    router.refresh();
   }
 
   return (

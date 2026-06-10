@@ -28,6 +28,8 @@ export async function resetAccessToken(token: string) {
 }
 
 export async function resetTaskData() {
+  await prisma.appliedMutation.deleteMany();
+  await prisma.backupRun.deleteMany();
   await prisma.pushSubscription.deleteMany();
   await prisma.notificationPreference.deleteMany();
   await prisma.taskCalendarLink.deleteMany();

@@ -140,6 +140,32 @@ textarea {
   padding: 34px clamp(18px, 4vw, 48px) 34px;
 }
 
+.app-shell__mobile-sync {
+  display: none;
+}
+
+.sync-status {
+  width: fit-content;
+  max-width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel-soft);
+  color: var(--accent-strong);
+  padding: 7px 10px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.sync-status[data-state="offline"] {
+  background: #fff3d8;
+  color: #8a5a10;
+}
+
+.sync-status[data-state="queued"] {
+  background: #eaf4ff;
+  color: #185a8d;
+}
+
 .shell-header h1 {
   margin: 0;
   font-size: 26px;
@@ -1562,7 +1588,8 @@ textarea {
 }
 
 .calendar-panel,
-.notification-settings {
+.notification-settings,
+.backup-card {
   display: grid;
   gap: 14px;
   border: 1px solid var(--line);
@@ -1643,6 +1670,42 @@ textarea {
   gap: 14px;
 }
 
+.backup-panel {
+  display: grid;
+  gap: 14px;
+  max-width: 680px;
+}
+
+.backup-card dl {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+
+.backup-card dl div {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 10px;
+  border-top: 1px solid var(--line);
+  padding-top: 8px;
+}
+
+.backup-card dt {
+  color: var(--muted);
+  font-weight: 750;
+}
+
+.backup-card dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.backup-panel__status {
+  margin: 0;
+  color: var(--accent-strong);
+  font-weight: 750;
+}
+
 .notification-settings__item {
   display: grid;
   gap: 10px;
@@ -1703,6 +1766,12 @@ textarea {
 
   .app-shell__main {
     padding: 22px 16px calc(86px + env(safe-area-inset-bottom));
+  }
+
+  .app-shell__mobile-sync {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 12px;
   }
 
   .bottom-nav {
