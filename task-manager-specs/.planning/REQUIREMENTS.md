@@ -10,9 +10,9 @@
 - [x] **ACCS-01**: User can open the app from phone and desktop against the same task database.
 - [x] **ACCS-02**: User can access the MVP through a private personal link.
 - [x] **ACCS-03**: User can regenerate the private access link.
-- [ ] **ACCS-04**: User can keep working with tasks on the phone while offline.
-- [ ] **ACCS-05**: When offline edits conflict, the latest change wins.
-- [ ] **ACCS-06**: System creates automatic backups so task data is recoverable.
+- [x] **ACCS-04**: User can keep working with tasks on the phone while offline.
+- [x] **ACCS-05**: When offline edits conflict, the latest change wins.
+- [x] **ACCS-06**: System creates automatic backups so task data is recoverable.
 
 ### Tasks
 
@@ -257,9 +257,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | NOTF-01 | Phase 9 | Complete |
 | NOTF-02 | Phase 9 | Complete |
 | NOTF-03 | Phase 9 | Complete |
-| ACCS-04 | Phase 10 | Pending |
-| ACCS-05 | Phase 10 | Pending |
-| ACCS-06 | Phase 10 | Pending |
+| ACCS-04 | Phase 10 | Complete |
+| ACCS-05 | Phase 10 | Complete |
+| ACCS-06 | Phase 10 | Complete |
 
 **Coverage:**
 - v1 requirements: 87 total

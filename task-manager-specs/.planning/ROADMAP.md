@@ -22,7 +22,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 7: Completion History** - Show completed work and simple progress statistics. (completed 2026-06-03)
 - [x] **Phase 8: Telegram And Gmail Intake** - Create confirmed tasks from selected Telegram messages and Gmail emails. (completed 2026-06-04)
 - [x] **Phase 9: Calendar And Notifications** - Send tasks to iPhone calendar and configure optional push notifications. (completed 2026-06-05)
-- [ ] **Phase 10: Offline, Conflicts, And Backups** - Make the MVP resilient with offline support, simple conflict handling, and backups.
+- [x] **Phase 10: Offline, Conflicts, And Backups** - Make the MVP resilient with offline support, simple conflict handling, and backups. (completed 2026-06-10)
 
 ## Phase Details
 
@@ -344,15 +344,15 @@ Plans:
 
 **Wave 1**
 
-- [ ] 10-01: Implement offline task storage and sync queue
+- [x] 10-01: Implement offline task storage and sync queue
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
-- [ ] 10-02: Implement latest-change-wins conflict resolution
+- [x] 10-02: Implement latest-change-wins conflict resolution
 
 **Wave 3** *(blocked on Wave 2 completion)*
 
-- [ ] 10-03: Implement automatic backup and recovery path
+- [x] 10-03: Implement automatic backup and recovery path
 
 ## Progress
 
@@ -370,4 +370,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
 | 7. Completion History | 3/3 | Complete    | 2026-06-03 |
 | 8. Telegram And Gmail Intake | 5/5 | Complete    | 2026-06-04 |
 | 9. Calendar And Notifications | 6/6 | Complete   | 2026-06-06 |
-| 10. Offline, Conflicts, And Backups | 0/3 | Not started | - |
+| 10. Offline, Conflicts, And Backups | 3/3 | Complete | 2026-06-10 |
