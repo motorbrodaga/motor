@@ -1,5 +1,7 @@
 process.env.DATABASE_URL ??= "file:./dev.db";
 
+export {};
+
 async function main() {
   const filePath = process.argv[2];
   const [{ validateBackupFile }, { prisma }] = await Promise.all([

@@ -1,5 +1,7 @@
 process.env.DATABASE_URL ??= "file:./dev.db";
 
+export {};
+
 async function main() {
   const [{ createBackup }, { prisma }] = await Promise.all([
     import("../src/lib/backups/backup-service"),

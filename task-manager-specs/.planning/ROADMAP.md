@@ -328,7 +328,7 @@ Plans:
 
 ### Phase 10: Offline, Conflicts, And Backups
 
-**Goal**: Make the MVP trustworthy by supporting offline phone usage, simple conflict handling, and automatic backups.
+**Goal**: As a personal task manager user, I want tasks to remain usable offline and recoverable from backups, so that important tasks do not get lost when my phone or server connection is unreliable.
 **Mode:** mvp
 **Depends on**: Phase 2
 **Requirements**: [ACCS-04, ACCS-05, ACCS-06]
