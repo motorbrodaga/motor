@@ -31,3 +31,13 @@ https://dashboard.render.com/blueprint/new?repo=https://github.com/motorbrodaga/
 3. Найти строку `Private link token for local development: ...`.
 4. Открыть `https://<render-url>/a/<token>`.
 5. После входа перейти в `Еще -> Доступ` и перегенерировать приватную ссылку.
+
+## Локальный доступ с телефона по Wi-Fi
+
+Если Render еще не подключен из-за биллинга, можно открыть приложение с телефона в той же Wi-Fi сети:
+
+1. Запустить `setup-zadachnik-firewall.cmd` от администратора и подтвердить окно Windows.
+2. Запустить `start-zadachnik-lan.cmd`.
+3. Открыть на телефоне ссылку вида `http://<IP-компьютера>:3101/a/<token>`.
+
+Сейчас компьютер отвечает на `http://192.168.31.167:3101/`, но телефон должен быть в той же Wi-Fi сети, а VPN на телефоне лучше выключить.
