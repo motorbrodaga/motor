@@ -1,5 +1,3 @@
-process.env.DATABASE_URL ??= "file:./dev.db";
-
 export {};
 
 async function main() {

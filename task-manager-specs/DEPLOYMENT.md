@@ -1,43 +1,80 @@
-# Деплой Задачника
+# Деплой Задачника без Render
 
-## Render
+## Выбранный вариант
 
-Конфигурация деплоя лежит в `render.yaml` в корне git-репозитория.
+Задачник переезжает на:
 
-Открыть Blueprint:
+- Vercel для постоянного HTTPS-адреса приложения;
+- Neon для бесплатной Postgres-базы без платежной карты.
 
-https://dashboard.render.com/blueprint/new?repo=https://github.com/motorbrodaga/motor
+## 1. Создать базу Neon
 
-## Что будет создано
+1. Открой https://neon.tech
+2. Создай бесплатный проект.
+3. Скопируй строку подключения Postgres вида:
 
-- Web Service `zadachnik`
-- Node.js runtime
-- root directory: `task-manager-specs/zadachnik-app`
-- SQLite база на постоянном диске `/var/data/zadachnik.db`
+```text
+postgresql://USER:PASSWORD@HOST.neon.tech/DB?sslmode=require
+```
 
-## Важные замечания
+## 2. Создать проект Vercel
 
-- Используется Render plan `starter`, потому что для SQLite нужен постоянный диск.
-- `ACCESS_TOKEN_PEPPER` и `INITIAL_ACCESS_TOKEN` генерируются Render автоматически.
-- Push-уведомления можно включить позже, заполнив:
-  - `NEXT_PUBLIC_VAPID_PUBLIC_KEY`
-  - `VAPID_PRIVATE_KEY`
-  - `VAPID_SUBJECT`
+1. Открой https://vercel.com/new
+2. Импортируй репозиторий:
 
-## После деплоя
+```text
+https://github.com/motorbrodaga/motor
+```
 
-1. Открыть публичный URL сервиса.
-2. Если открылась страница "Личный доступ", зайти в Render logs.
-3. Найти строку `Private link token for local development: ...`.
-4. Открыть `https://<render-url>/a/<token>`.
-5. После входа перейти в `Еще -> Доступ` и перегенерировать приватную ссылку.
+3. В настройках проекта укажи Root Directory:
 
-## Локальный доступ с телефона по Wi-Fi
+```text
+task-manager-specs/zadachnik-app
+```
 
-Если Render еще не подключен из-за биллинга, можно открыть приложение с телефона в той же Wi-Fi сети:
+4. Framework должен определиться как Next.js.
 
-1. Запустить `setup-zadachnik-firewall.cmd` от администратора и подтвердить окно Windows.
-2. Запустить `start-zadachnik-lan.cmd`.
-3. Открыть на телефоне ссылку вида `http://<IP-компьютера>:3101/a/<token>`.
+## 3. Добавить переменные окружения Vercel
 
-Сейчас компьютер отвечает на `http://192.168.31.167:3101/`, но телефон должен быть в той же Wi-Fi сети, а VPN на телефоне лучше выключить.
+В Vercel Project Settings -> Environment Variables добавь:
+
+```text
+DATABASE_URL=<строка подключения Neon>
+ACCESS_TOKEN_PEPPER=<длинная случайная строка>
+INITIAL_ACCESS_TOKEN=<первый приватный токен входа>
+```
+
+`INITIAL_ACCESS_TOKEN` нужен только для первого входа. После входа открой `Еще -> Доступ` и перегенерируй приватную ссылку.
+
+Push-уведомления можно включить позже:
+
+```text
+NEXT_PUBLIC_VAPID_PUBLIC_KEY=<public key>
+VAPID_PRIVATE_KEY=<private key>
+VAPID_SUBJECT=mailto:you@example.com
+```
+
+## 4. Деплой
+
+Vercel запустит команду из `vercel.json`:
+
+```text
+npm run vercel-build
+```
+
+Она выполнит:
+
+1. `prisma generate`
+2. `prisma db push`
+3. `prisma db seed`
+4. `next build`
+
+## 5. Первый вход
+
+После деплоя открой:
+
+```text
+https://<vercel-url>/a/<INITIAL_ACCESS_TOKEN>
+```
+
+Затем в приложении открой `Еще -> Доступ` и создай новую приватную ссылку.

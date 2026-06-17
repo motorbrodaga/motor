@@ -1,7 +1,10 @@
 import { defineConfig, devices } from "@playwright/test";
 
-process.env.DATABASE_URL ??= "file:./dev.db";
 process.env.ACCESS_TOKEN_PEPPER ??= "development-only-pepper";
+
+const databaseUrl =
+  process.env.DATABASE_URL ??
+  "postgresql://postgres:postgres@localhost:5432/zadachnik?schema=public";
 
 export default defineConfig({
   testDir: "./tests",
@@ -15,7 +18,7 @@ export default defineConfig({
   webServer: {
     command: "npm run dev",
     env: {
-      DATABASE_URL: process.env.DATABASE_URL,
+      DATABASE_URL: databaseUrl,
       ACCESS_TOKEN_PEPPER: process.env.ACCESS_TOKEN_PEPPER
     },
     url: "http://127.0.0.1:3000",

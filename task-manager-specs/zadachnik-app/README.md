@@ -1,48 +1,59 @@
-# Задачник: локальный запуск
+# Задачник
 
-`zadachnik-app` - первая рабочая оболочка приложения. Она запускает один
-сервер, к которому можно подключиться с компьютера и телефона в одной сети.
+Личный mobile-first таск-менеджер: быстрый захват задач, ассистент, дневной фокус, ожидания, обзоры, календарь, уведомления, offline-очередь и бэкапы.
 
-## Первый запуск
+## Основной деплой
 
-1. Установить зависимости:
+Основной вариант для телефона: Vercel + Neon.
 
-   ```powershell
-   npm install
-   ```
+- Vercel дает постоянный HTTPS-адрес приложения.
+- Neon дает Postgres-базу на бесплатном плане без карты.
+- Prisma использует `postgresql` provider.
 
-2. Создать локальные переменные:
+Подробная инструкция: `../DEPLOYMENT.md`.
 
-   ```powershell
-   Copy-Item .env.example .env
-   ```
+## Переменные окружения
 
-3. В `.env` заменить `ACCESS_TOKEN_PEPPER` на длинную случайную строку.
-   Файл `.env` локальный, его нельзя коммитить.
+Минимально нужны:
 
-4. Подготовить базу:
+```text
+DATABASE_URL="postgresql://USER:PASSWORD@HOST.neon.tech/DB?sslmode=require"
+ACCESS_TOKEN_PEPPER="replace-with-a-long-random-string"
+INITIAL_ACCESS_TOKEN="replace-with-first-login-token"
+```
 
-   ```powershell
-   npm run db:migrate
-   npm run db:seed
-   ```
+Опционально для push-уведомлений:
 
-5. Запустить для компьютера:
+```text
+NEXT_PUBLIC_VAPID_PUBLIC_KEY="replace-with-vapid-public-key"
+VAPID_PRIVATE_KEY="replace-with-vapid-private-key"
+VAPID_SUBJECT="mailto:you@example.com"
+```
 
-   ```powershell
-   npm run dev
-   ```
+## Локальный запуск
 
-6. Запустить для телефона в той же Wi-Fi сети:
+Локально приложение тоже ожидает Postgres-совместимую строку `DATABASE_URL`.
 
-   ```powershell
-   npm run dev:lan
-   ```
+```powershell
+npm install
+Copy-Item .env.example .env
+npm run db:push
+npm run db:seed
+npm run dev
+```
 
-   После этого открыть адрес компьютера с портом Next.js на телефоне.
+Для доступа с телефона в той же Wi-Fi сети:
 
-## Границы Phase 1
+```powershell
+npm run dev:lan -- -p 3101
+```
 
-В этой фазе есть оболочка, приватная ссылка, Панель, нижняя навигация и вход
-в быстрый ввод. Полная работа с задачами, офлайн-режим, конфликты и бэкапы
-будут добавлены позже по roadmap.
+## Vercel build
+
+Vercel использует `vercel.json`:
+
+```text
+npm run vercel-build
+```
+
+Команда применяет схему к Neon, выполняет seed и собирает Next.js.
